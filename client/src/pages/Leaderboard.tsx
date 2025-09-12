@@ -53,6 +53,8 @@ export default function Leaderboard() {
           <h1 
             className="text-4xl md:text-5xl font-bold mb-2 text-white transition-all duration-500"
             style={{
+              fontFamily: "'Black Ops One', cursive",
+              letterSpacing: "3px",
               WebkitTextStroke: activeCategory === "efemeros" 
                 ? "2px #3b82f6" 
                 : "2px #ef4444",
