@@ -2,11 +2,11 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
 import { useUserRegistration } from "@/hooks/use-user-registration";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { apiRequest } from "@/lib/queryClient";
+import { Shield, Users } from "lucide-react";
 import type { InsertFactionRegistration } from "@shared/schema";
 
 interface RegistrationFormProps {
@@ -89,30 +89,40 @@ export default function RegistrationForm({ onClose, onSuccess }: RegistrationFor
       
       <form onSubmit={handleSubmit} className="space-y-4">
         {/* Facción */}
-        <div className="space-y-2">
-          <Label htmlFor="faction" className="text-gray-300">
+        <div className="space-y-3">
+          <Label className="text-gray-300">
             Facción *
           </Label>
-          <Select 
-            value={faction} 
-            onValueChange={(value) => setFaction(value as "efemeros" | "rosetta")}
-          >
-            <SelectTrigger 
-              id="faction"
-              className="bg-slate-700 border-slate-600 text-white"
-              data-testid="select-faction"
+          <div className="grid grid-cols-2 gap-3">
+            <Button
+              type="button"
+              variant="outline"
+              onClick={() => setFaction("efemeros")}
+              className={`h-20 flex flex-col items-center justify-center border-2 transition-all ${
+                faction === "efemeros"
+                  ? "border-cyan-500 bg-cyan-500/20 text-cyan-300"
+                  : "border-slate-600 text-gray-300 hover:border-cyan-400 hover:bg-cyan-500/10"
+              }`}
+              data-testid="button-faction-efemeros"
             >
-              <SelectValue placeholder="Selecciona una facción" />
-            </SelectTrigger>
-            <SelectContent className="bg-slate-700 border-slate-600">
-              <SelectItem value="efemeros" className="text-white hover:bg-slate-600">
-                Efémeros
-              </SelectItem>
-              <SelectItem value="rosetta" className="text-white hover:bg-slate-600">
-                Rosetta
-              </SelectItem>
-            </SelectContent>
-          </Select>
+              <Shield className="w-6 h-6 mb-1" />
+              <span className="text-sm font-medium">Efémeros</span>
+            </Button>
+            <Button
+              type="button"
+              variant="outline"
+              onClick={() => setFaction("rosetta")}
+              className={`h-20 flex flex-col items-center justify-center border-2 transition-all ${
+                faction === "rosetta"
+                  ? "border-blue-500 bg-blue-500/20 text-blue-300"
+                  : "border-slate-600 text-gray-300 hover:border-blue-400 hover:bg-blue-500/10"
+              }`}
+              data-testid="button-faction-rosetta"
+            >
+              <Users className="w-6 h-6 mb-1" />
+              <span className="text-sm font-medium">Rosetta</span>
+            </Button>
+          </div>
         </div>
 
         {/* Nombre */}
@@ -151,14 +161,14 @@ export default function RegistrationForm({ onClose, onSuccess }: RegistrationFor
         {/* UUID del Personaje (opcional) */}
         <div className="space-y-2">
           <Label htmlFor="characterUuid" className="text-gray-300">
-            UUID del Personaje (puede ser numérico como 150464316)
+            UUID del Personaje (opcional)
           </Label>
           <Input
             id="characterUuid"
             type="text"
             value={characterUuid}
             onChange={(e) => setCharacterUuid(e.target.value)}
-            placeholder="ej: 150464316 o abc-def-123"
+            placeholder="Ingresar UUID"
             className="bg-slate-700 border-slate-600 text-white placeholder-gray-400"
             data-testid="input-character-uuid"
           />
