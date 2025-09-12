@@ -18,6 +18,7 @@ export interface IStorage {
   createFactionRegistration(registration: InsertFactionRegistration): Promise<FactionRegistration>;
   getRegistrationsByFaction(faction: "efemeros" | "rosetta"): Promise<FactionRegistration[]>;
   getRegistrationById(id: string): Promise<FactionRegistration | undefined>;
+  getRegistrationByPlayerName(playerName: string): Promise<FactionRegistration | undefined>;
   updateRegistration(id: string, data: Partial<FactionRegistration>, ownerSecret: string): Promise<FactionRegistration | null>;
   updateRegistrationFaction(id: string, newFaction: "efemeros" | "rosetta", ownerSecret: string): Promise<FactionRegistration | null>;
   deleteRegistration(id: string, ownerSecret: string): Promise<boolean>;
@@ -58,8 +59,22 @@ export class MemStorage implements IStorage {
     }
   }
 
+  // Helper function to normalize player names for comparison
+  private normalizePlayerName(name: string): string {
+    return name.trim().toLowerCase();
+  }
+
   async createFactionRegistration(registration: InsertFactionRegistration): Promise<FactionRegistration> {
     const registrations = await this.getFactionRegistrations();
+    
+    // Check if a registration with this playerName already exists (case-insensitive, trimmed)
+    const normalizedNewName = this.normalizePlayerName(registration.playerName);
+    const existingRegistration = registrations.find(reg => 
+      this.normalizePlayerName(reg.playerName) === normalizedNewName
+    );
+    if (existingRegistration) {
+      throw new Error('DUPLICATE_PLAYER');
+    }
     
     const newRegistration: FactionRegistration = {
       id: randomUUID(),
@@ -83,6 +98,11 @@ export class MemStorage implements IStorage {
   async getRegistrationById(id: string): Promise<FactionRegistration | undefined> {
     const registrations = await this.getFactionRegistrations();
     return registrations.find(reg => reg.id === id);
+  }
+
+  async getRegistrationByPlayerName(playerName: string): Promise<FactionRegistration | undefined> {
+    const registrations = await this.getFactionRegistrations();
+    return registrations.find(reg => reg.playerName === playerName);
   }
 
   async updateRegistrationFaction(id: string, newFaction: "efemeros" | "rosetta", ownerSecret: string): Promise<FactionRegistration | null> {
@@ -140,6 +160,17 @@ export class MemStorage implements IStorage {
     // Validate owner secret
     if (registrations[registrationIndex].ownerSecret !== ownerSecret) {
       throw new Error('UNAUTHORIZED'); // Will be caught in routes to return 403
+    }
+
+    // Check for duplicate playerName if it's being changed
+    if (data.playerName && data.playerName !== registrations[registrationIndex].playerName) {
+      const normalizedNewName = this.normalizePlayerName(data.playerName);
+      const existingRegistration = registrations.find(reg => 
+        reg.id !== id && this.normalizePlayerName(reg.playerName) === normalizedNewName
+      );
+      if (existingRegistration) {
+        throw new Error('DUPLICATE_PLAYER');
+      }
     }
 
     // Update allowed fields (don't allow changing id, registeredAt, ownerSecret)

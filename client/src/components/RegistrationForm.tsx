@@ -51,9 +51,18 @@ export default function RegistrationForm({ onClose, onSuccess }: RegistrationFor
       }
     },
     onError: (error) => {
+      let errorMessage = "Hubo un problema al registrarte. Intenta de nuevo.";
+      let errorTitle = "Error en el registro";
+      
+      // Check if it's a 409 error (duplicate player)
+      if (error instanceof Error && error.message.startsWith("409:")) {
+        errorTitle = "Jugador ya registrado";
+        errorMessage = "Ya existe un jugador con este nombre. Por favor usa un nombre diferente.";
+      }
+      
       toast({
-        title: "Error en el registro",
-        description: "Hubo un problema al registrarte. Intenta de nuevo.",
+        title: errorTitle,
+        description: errorMessage,
         variant: "destructive",
       });
     },

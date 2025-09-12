@@ -52,6 +52,9 @@ export async function registerRoutes(app: Express): Promise<Server> {
       if (error instanceof ZodError) {
         return res.status(400).json({ error: "Invalid registration data", details: error.errors });
       }
+      if (error instanceof Error && error.message === 'DUPLICATE_PLAYER') {
+        return res.status(409).json({ error: "A player with this name is already registered" });
+      }
       res.status(500).json({ error: "Error creating registration" });
     }
   });
@@ -121,6 +124,9 @@ export async function registerRoutes(app: Express): Promise<Server> {
       }
       if (error instanceof Error && error.message === 'UNAUTHORIZED') {
         return res.status(403).json({ error: "You are not authorized to modify this registration" });
+      }
+      if (error instanceof Error && error.message === 'DUPLICATE_PLAYER') {
+        return res.status(409).json({ error: "A player with this name is already registered" });
       }
       res.status(500).json({ error: "Error updating registration" });
     }

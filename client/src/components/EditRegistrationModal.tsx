@@ -64,9 +64,19 @@ export default function EditRegistrationModal({
     },
     onError: (error: any) => {
       console.error("Error updating registration:", error);
+      
+      let errorMessage = "No se pudo actualizar el registro. Inténtalo de nuevo.";
+      let errorTitle = "Error";
+      
+      // Check if it's a 409 error (duplicate player)
+      if (error instanceof Error && error.message.startsWith("409:")) {
+        errorTitle = "Jugador ya registrado";
+        errorMessage = "Ya existe un jugador con este nombre. Por favor usa un nombre diferente.";
+      }
+      
       toast({
-        title: "Error",
-        description: error.message || "No se pudo actualizar el registro. Inténtalo de nuevo.",
+        title: errorTitle,
+        description: errorMessage,
         variant: "destructive",
       });
     },
