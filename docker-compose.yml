@@ -1,0 +1,15 @@
+version: "3.9"
+
+services:
+  app:
+    build: .
+    container_name: factionselector
+    ports:
+      - "${PORT:-5000}:5000"
+    environment:
+      - NODE_ENV=production
+      - PORT=5000
+    volumes:
+      - ./registros.json:/app/registros.json
+      - ./dist:/app/dist
+    restart: unless-stopped
