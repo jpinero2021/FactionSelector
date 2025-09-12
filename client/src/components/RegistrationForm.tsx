@@ -39,7 +39,9 @@ export default function RegistrationForm({ onClose, onSuccess }: RegistrationFor
         title: "¡Registro exitoso!",
         description: `Te has registrado exitosamente en la facción ${faction === "efemeros" ? "Efémeros" : "Rosetta"}.`,
       });
+      
       queryClient.invalidateQueries({ queryKey: ["/api/registrations"] });
+      
       setFaction("");
       setPlayerName("");
       setCharacterUuid("");
