@@ -90,7 +90,7 @@ export default function RegistrationForm({ onClose, onSuccess }: RegistrationFor
 
   return (
     <div 
-      className="p-6 rounded-lg border border-slate-600 w-full mx-auto"
+      className="p-4 sm:p-6 rounded-lg border border-slate-600 w-full mx-auto"
       style={{
         backgroundColor: "#2a2a2a"
       }}
@@ -103,34 +103,34 @@ export default function RegistrationForm({ onClose, onSuccess }: RegistrationFor
           <Label className="text-gray-300">
             Facción *
           </Label>
-          <div className="grid grid-cols-2 gap-3">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             <Button
               type="button"
               variant="outline"
               onClick={() => setFaction("efemeros")}
-              className={`h-24 flex flex-col items-center justify-center border-2 transition-all ${
+              className={`h-20 sm:h-24 flex flex-col items-center justify-center border-2 transition-all ${
                 faction === "efemeros"
                   ? "border-cyan-500 bg-cyan-500/20 text-cyan-300"
                   : "border-slate-600 text-gray-300 hover:border-cyan-400 hover:bg-cyan-500/10"
               }`}
               data-testid="button-faction-efemeros"
             >
-              <img src={efemerosLogo} alt="Efémeros" className="w-10 h-10 mb-1 object-contain" />
-              <span className="text-sm font-medium">Efémeros</span>
+              <img src={efemerosLogo} alt="Efémeros" className="w-8 h-8 sm:w-10 sm:h-10 mb-1 object-contain" />
+              <span className="text-xs sm:text-sm font-medium">Efémeros</span>
             </Button>
             <Button
               type="button"
               variant="outline"
               onClick={() => setFaction("rosetta")}
-              className={`h-24 flex flex-col items-center justify-center border-2 transition-all ${
+              className={`h-20 sm:h-24 flex flex-col items-center justify-center border-2 transition-all ${
                 faction === "rosetta"
                   ? "border-blue-500 bg-blue-500/20 text-blue-300"
                   : "border-slate-600 text-gray-300 hover:border-blue-400 hover:bg-blue-500/10"
               }`}
               data-testid="button-faction-rosetta"
             >
-              <img src={rosettaLogo} alt="Rosetta" className="w-10 h-10 mb-1 object-contain" />
-              <span className="text-sm font-medium">Rosetta</span>
+              <img src={rosettaLogo} alt="Rosetta" className="w-8 h-8 sm:w-10 sm:h-10 mb-1 object-contain" />
+              <span className="text-xs sm:text-sm font-medium">Rosetta</span>
             </Button>
           </div>
         </div>

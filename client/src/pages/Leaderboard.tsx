@@ -51,21 +51,27 @@ export default function Leaderboard() {
       }}
     >
       <div className="w-full max-w-4xl mx-auto shadow-2xl">
+        {/* Title */}
+        <div className="text-center mb-8">
+          <h1 className="text-4xl md:text-5xl font-bold text-white mb-2 bg-gradient-to-r from-cyan-400 via-purple-400 to-blue-400 bg-clip-text text-transparent">
+            Prismaverso 88
+          </h1>
+          <p className="text-gray-400 text-lg">Leaderboard de Facciones</p>
+        </div>
+        
         {/* Registration Button - Moved to top */}
         <div className="flex justify-center mb-6">
           <Dialog open={isRegistrationOpen} onOpenChange={setIsRegistrationOpen}>
             <DialogTrigger asChild>
               <Button
-                className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-bold px-8 py-3 rounded-full shadow-lg transform transition-all hover:scale-105 hover:shadow-xl border border-blue-500/30"
+                className="bg-slate-700 hover:bg-slate-800 text-white font-semibold px-6 py-2 flex items-center gap-2"
                 data-testid="button-open-registration"
               >
-                <span className="flex items-center gap-2">
-                  ⚔️ Unirse a la batalla
-                </span>
+                ⚔️ Unirse a la batalla
               </Button>
             </DialogTrigger>
             <DialogContent 
-              className="sm:max-w-2xl border-slate-600 z-50"
+              className="w-[95vw] max-w-2xl max-h-[90vh] overflow-y-auto border-slate-600 z-50"
               style={{ backgroundColor: "#1a1a1a" }}
             >
               <RegistrationForm 
