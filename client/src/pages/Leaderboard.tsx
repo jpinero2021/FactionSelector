@@ -79,7 +79,8 @@ export default function Leaderboard() {
                   boxShadow: activeCategory === "efemeros"
                     ? "0 4px 15px rgba(59, 130, 246, 0.4)"
                     : "0 4px 15px rgba(239, 68, 68, 0.4)",
-                  border: "none",
+                  border: "0",
+                  outline: "none",
                   textShadow: "0 1px 2px rgba(0, 0, 0, 0.8)"
                 }}
                 data-testid="button-open-registration"
