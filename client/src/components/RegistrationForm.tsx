@@ -4,6 +4,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
+import { useUserRegistration } from "@/hooks/use-user-registration";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { apiRequest } from "@/lib/queryClient";
 import type { InsertFactionRegistration } from "@shared/schema";
@@ -19,6 +20,7 @@ export default function RegistrationForm({ onClose, onSuccess }: RegistrationFor
   const [characterUuid, setCharacterUuid] = useState("");
   const [teamName, setTeamName] = useState("");
   const { toast } = useToast();
+  const { saveRegistrationData } = useUserRegistration();
   const queryClient = useQueryClient();
 
   const registrationMutation = useMutation({
@@ -26,7 +28,12 @@ export default function RegistrationForm({ onClose, onSuccess }: RegistrationFor
       const response = await apiRequest("POST", "/api/registrations", data);
       return response.json();
     },
-    onSuccess: () => {
+    onSuccess: (registrationData) => {
+      // Save the registration ID and ownerSecret to localStorage
+      if (registrationData && registrationData.id && registrationData.ownerSecret) {
+        saveRegistrationData(registrationData.id, registrationData.ownerSecret);
+      }
+      
       toast({
         title: "¡Registro exitoso!",
         description: `Te has registrado exitosamente en la facción ${faction === "efemeros" ? "Efémeros" : "Rosetta"}.`,

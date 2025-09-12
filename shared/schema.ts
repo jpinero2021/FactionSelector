@@ -39,6 +39,7 @@ export const factionRegistrationSchema = z.object({
   characterUuid: z.string().optional(),
   teamName: z.string().optional(),
   registeredAt: z.string().optional(),
+  ownerSecret: z.string().optional(),
 });
 
 export type InsertUser = z.infer<typeof insertUserSchema>;
@@ -46,4 +47,4 @@ export type User = typeof users.$inferSelect;
 export type InsertLeaderboardEntry = z.infer<typeof insertLeaderboardEntrySchema>;
 export type LeaderboardEntry = typeof leaderboardEntries.$inferSelect;
 export type FactionRegistration = z.infer<typeof factionRegistrationSchema>;
-export type InsertFactionRegistration = Omit<FactionRegistration, 'id' | 'registeredAt'>;
+export type InsertFactionRegistration = Omit<FactionRegistration, 'id' | 'registeredAt' | 'ownerSecret'>;

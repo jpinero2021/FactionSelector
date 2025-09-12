@@ -17,6 +17,10 @@ export interface IStorage {
   getFactionRegistrations(): Promise<FactionRegistration[]>;
   createFactionRegistration(registration: InsertFactionRegistration): Promise<FactionRegistration>;
   getRegistrationsByFaction(faction: "efemeros" | "rosetta"): Promise<FactionRegistration[]>;
+  getRegistrationById(id: string): Promise<FactionRegistration | undefined>;
+  updateRegistrationFaction(id: string, newFaction: "efemeros" | "rosetta", ownerSecret: string): Promise<FactionRegistration | null>;
+  deleteRegistration(id: string, ownerSecret: string): Promise<boolean>;
+  validateOwnerSecret(id: string, ownerSecret: string): Promise<boolean>;
 }
 
 export class MemStorage implements IStorage {
@@ -60,6 +64,7 @@ export class MemStorage implements IStorage {
       id: randomUUID(),
       ...registration,
       registeredAt: new Date().toISOString(),
+      ownerSecret: randomUUID(), // Generate unique ownerSecret
     };
 
     registrations.push(newRegistration);
@@ -72,6 +77,66 @@ export class MemStorage implements IStorage {
   async getRegistrationsByFaction(faction: "efemeros" | "rosetta"): Promise<FactionRegistration[]> {
     const registrations = await this.getFactionRegistrations();
     return registrations.filter(reg => reg.faction === faction);
+  }
+
+  async getRegistrationById(id: string): Promise<FactionRegistration | undefined> {
+    const registrations = await this.getFactionRegistrations();
+    return registrations.find(reg => reg.id === id);
+  }
+
+  async updateRegistrationFaction(id: string, newFaction: "efemeros" | "rosetta", ownerSecret: string): Promise<FactionRegistration | null> {
+    const registrations = await this.getFactionRegistrations();
+    const registrationIndex = registrations.findIndex(reg => reg.id === id);
+    
+    if (registrationIndex === -1) {
+      return null; // Registration not found
+    }
+
+    // Validate owner secret
+    if (registrations[registrationIndex].ownerSecret !== ownerSecret) {
+      throw new Error('UNAUTHORIZED'); // Will be caught in routes to return 403
+    }
+
+    // Update the faction
+    registrations[registrationIndex].faction = newFaction;
+    
+    // Save to file
+    await fs.writeFile(REGISTROS_FILE, JSON.stringify(registrations, null, 2));
+    
+    return registrations[registrationIndex];
+  }
+
+  async deleteRegistration(id: string, ownerSecret: string): Promise<boolean> {
+    const registrations = await this.getFactionRegistrations();
+    const registrationIndex = registrations.findIndex(reg => reg.id === id);
+    
+    if (registrationIndex === -1) {
+      return false; // Registration not found
+    }
+
+    // Validate owner secret
+    if (registrations[registrationIndex].ownerSecret !== ownerSecret) {
+      throw new Error('UNAUTHORIZED'); // Will be caught in routes to return 403
+    }
+
+    // Remove the registration
+    const filteredRegistrations = registrations.filter(reg => reg.id !== id);
+    
+    // Save the filtered registrations back to file
+    await fs.writeFile(REGISTROS_FILE, JSON.stringify(filteredRegistrations, null, 2));
+    
+    return true;
+  }
+
+  async validateOwnerSecret(id: string, ownerSecret: string): Promise<boolean> {
+    const registrations = await this.getFactionRegistrations();
+    const registration = registrations.find(reg => reg.id === id);
+    
+    if (!registration) {
+      return false; // Registration not found
+    }
+
+    return registration.ownerSecret === ownerSecret;
   }
 }
 

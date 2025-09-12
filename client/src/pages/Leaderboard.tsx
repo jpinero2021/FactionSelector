@@ -23,6 +23,8 @@ export default function Leaderboard() {
     characterUuid: registration.characterUuid || "-", // Show "-" if no UUID
     teamName: registration.teamName || "-", // Show "-" if no team name
     rank: rank,
+    registrationId: registration.id || "",
+    faction: registration.faction,
   });
 
   // Filter and rank registrations by faction
