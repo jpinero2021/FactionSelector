@@ -73,7 +73,7 @@ export default function Leaderboard() {
           <Dialog open={isRegistrationOpen} onOpenChange={setIsRegistrationOpen}>
             <DialogTrigger asChild>
               <Button
-                className="relative px-8 py-3 text-white font-bold tracking-wider text-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
+                className="relative px-4 py-2 text-white font-semibold text-sm shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
                 style={{
                   background: "#374151",
                   boxShadow: activeCategory === "efemeros"
@@ -84,7 +84,7 @@ export default function Leaderboard() {
                 }}
                 data-testid="button-open-registration"
               >
-                <span className="relative z-10">REGISTRARSE</span>
+                <span className="relative z-10">Registrarse</span>
                 <div className="absolute inset-0 bg-gradient-to-b from-white/10 to-transparent"></div>
               </Button>
             </DialogTrigger>
