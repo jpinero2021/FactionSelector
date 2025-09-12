@@ -122,38 +122,6 @@ export default function Leaderboard() {
           onCategoryChange={setActiveCategory}
         />
         
-        {/* Search Bar - Positioned above table header */}
-        <div className="flex justify-center mb-4 mt-8">
-          <div className="relative w-full max-w-md">
-            <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-              <Search className="h-5 w-5 text-gray-400" />
-            </div>
-            <Input
-              type="text"
-              placeholder="Buscar jugador, equipo o UUID..."
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
-              className="pl-11 pr-10 py-3 bg-black/30 border border-gray-600/50 text-white placeholder:text-gray-400 focus:border-blue-500/60 focus:ring-2 focus:ring-blue-500/20 rounded-lg backdrop-blur-sm transition-all duration-300"
-              style={{
-                background: "rgba(26, 26, 26, 0.7)",
-                boxShadow: activeCategory === "efemeros"
-                  ? "0 0 0 1px rgba(59, 130, 246, 0.2), 0 2px 8px rgba(0, 0, 0, 0.3)"
-                  : "0 0 0 1px rgba(239, 68, 68, 0.2), 0 2px 8px rgba(0, 0, 0, 0.3)"
-              }}
-              data-testid="input-search"
-            />
-            {searchTerm && (
-              <button
-                onClick={() => setSearchTerm("")}
-                className="absolute inset-y-0 right-0 pr-4 flex items-center text-gray-400 hover:text-white transition-colors duration-200"
-                data-testid="button-clear-search"
-              >
-                <X className="h-4 w-4" />
-              </button>
-            )}
-          </div>
-        </div>
-        
         <LeaderboardTable 
           entries={currentData}
           category={activeCategory}
@@ -211,6 +179,38 @@ export default function Leaderboard() {
                 />
               </div>
             </div>
+          </div>
+        </div>
+        
+        {/* Search Bar - Footer position, full width */}
+        <div className="mt-8 w-full">
+          <div className="relative w-full">
+            <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none z-10">
+              <Search className="h-5 w-5 text-gray-400" />
+            </div>
+            <Input
+              type="text"
+              placeholder="Buscar jugador, equipo o UUID..."
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+              className="w-full pl-11 pr-10 py-4 bg-black/30 border border-gray-600/50 text-white placeholder:text-gray-400 focus:border-blue-500/60 focus:ring-2 focus:ring-blue-500/20 rounded-lg backdrop-blur-sm transition-all duration-300 text-center"
+              style={{
+                background: "rgba(26, 26, 26, 0.8)",
+                boxShadow: activeCategory === "efemeros"
+                  ? "0 0 0 1px rgba(59, 130, 246, 0.3), 0 4px 12px rgba(0, 0, 0, 0.4)"
+                  : "0 0 0 1px rgba(239, 68, 68, 0.3), 0 4px 12px rgba(0, 0, 0, 0.4)"
+              }}
+              data-testid="input-search"
+            />
+            {searchTerm && (
+              <button
+                onClick={() => setSearchTerm("")}
+                className="absolute inset-y-0 right-0 pr-4 flex items-center text-gray-400 hover:text-white transition-colors duration-200 z-10"
+                data-testid="button-clear-search"
+              >
+                <X className="h-5 w-5" />
+              </button>
+            )}
           </div>
         </div>
       </div>
