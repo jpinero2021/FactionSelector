@@ -12,8 +12,8 @@ export default function LeaderboardToggle({ activeCategory, onCategoryChange }: 
       className="relative px-8 py-6 border-b-2 transition-all duration-700 ease-in-out overflow-hidden"
       style={{
         background: activeCategory === "efemeros" 
-          ? "linear-gradient(90deg, rgba(30, 64, 175, 0.8) 0%, rgba(59, 130, 246, 0.8) 25%, rgba(96, 165, 250, 0.8) 50%, rgba(59, 130, 246, 0.8) 75%, rgba(30, 64, 175, 0.8) 100%)"
-          : "linear-gradient(90deg, rgba(220, 38, 38, 0.8) 0%, rgba(239, 68, 68, 0.8) 25%, rgba(248, 113, 113, 0.8) 50%, rgba(239, 68, 68, 0.8) 75%, rgba(220, 38, 38, 0.8) 100%)",
+          ? "linear-gradient(90deg, rgba(30, 64, 175, 0.5) 0%, rgba(59, 130, 246, 0.5) 25%, rgba(96, 165, 250, 0.5) 50%, rgba(59, 130, 246, 0.5) 75%, rgba(30, 64, 175, 0.5) 100%)"
+          : "linear-gradient(90deg, rgba(220, 38, 38, 0.5) 0%, rgba(239, 68, 68, 0.5) 25%, rgba(248, 113, 113, 0.5) 50%, rgba(239, 68, 68, 0.5) 75%, rgba(220, 38, 38, 0.5) 100%)",
         borderBottomColor: "#2d3748"
       }}
     >
