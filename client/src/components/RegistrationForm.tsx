@@ -10,9 +10,10 @@ import type { InsertFactionRegistration } from "@shared/schema";
 
 interface RegistrationFormProps {
   onClose?: () => void;
+  onSuccess?: () => void;
 }
 
-export default function RegistrationForm({ onClose }: RegistrationFormProps) {
+export default function RegistrationForm({ onClose, onSuccess }: RegistrationFormProps) {
   const [faction, setFaction] = useState<"efemeros" | "rosetta" | "">("");
   const [playerName, setPlayerName] = useState("");
   const [characterUuid, setCharacterUuid] = useState("");
@@ -33,7 +34,11 @@ export default function RegistrationForm({ onClose }: RegistrationFormProps) {
       setFaction("");
       setPlayerName("");
       setCharacterUuid("");
-      if (onClose) onClose();
+      if (onSuccess) {
+        onSuccess();
+      } else if (onClose) {
+        onClose();
+      }
     },
     onError: (error) => {
       toast({

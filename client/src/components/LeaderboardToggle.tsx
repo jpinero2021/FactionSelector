@@ -18,6 +18,7 @@ export default function LeaderboardToggle({ activeCategory, onCategoryChange }: 
           activeCategory === "efemeros" ? "opacity-100" : "opacity-80"
         }`}
         onClick={() => onCategoryChange("efemeros")}
+        data-testid="button-toggle-efemeros"
       >
         <h1 className="text-white text-3xl font-bold tracking-wide">Efémeros</h1>
         <div className="flex items-center gap-2 text-sm mt-1">
@@ -64,15 +65,11 @@ export default function LeaderboardToggle({ activeCategory, onCategoryChange }: 
           activeCategory === "rosetta" ? "opacity-100" : "opacity-80"
         }`}
         onClick={() => onCategoryChange("rosetta")}
+        data-testid="button-toggle-rosetta"
       >
         <h1 className="text-white text-3xl font-bold tracking-wide">Rosetta</h1>
       </div>
 
-      {/* Hidden toggle controls for testing */}
-      <div className="absolute top-full left-0 opacity-0 pointer-events-none">
-        <button data-testid="button-toggle-efemeros">Efémeros</button>
-        <button data-testid="button-toggle-rosetta">Rosetta</button>
-      </div>
     </div>
   );
 }

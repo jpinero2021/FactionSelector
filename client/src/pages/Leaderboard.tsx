@@ -1,104 +1,41 @@
 import { useState } from "react";
+import { useQuery } from "@tanstack/react-query";
 import LeaderboardToggle from "@/components/LeaderboardToggle";
 import LeaderboardTable, { LeaderboardEntry } from "@/components/LeaderboardTable";
 import RegistrationForm from "@/components/RegistrationForm";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
+import { FactionRegistration } from "@shared/schema";
 
 export default function Leaderboard() {
   const [activeCategory, setActiveCategory] = useState<"efemeros" | "rosetta">("efemeros");
   const [isRegistrationOpen, setIsRegistrationOpen] = useState(false);
 
-  // todo: remove mock functionality - sample data from the image
-  const efemeriosData: LeaderboardEntry[] = [
-    {
-      id: "1",
-      playerName: "HumanoOnce",
-      teamName: "Seres Humanos",
-      energyPoints: 400,
-      rank: 1,
-    },
-    {
-      id: "2", 
-      playerName: "ZzGENERALzZ",
-      teamName: "ANGELS",
-      energyPoints: 70,
-      rank: 2,
-    },
-    {
-      id: "3",
-      playerName: "_Matiu",
-      teamName: "LATAM",
-      energyPoints: 70,
-      rank: 3,
-    },
-    {
-      id: "4",
-      playerName: "DeviantFALLIDO",
-      teamName: "Gordit0s lexones",
-      energyPoints: 50,
-      rank: 4,
-    },
-    {
-      id: "5",
-      playerName: "G3mini",
-      teamName: "Seres Humanos",
-      energyPoints: 50,
-      rank: 5,
-    },
-    {
-      id: "6",
-      playerName: "Ratitaa",
-      teamName: "Seres Humanos",
-      energyPoints: 20,
-      rank: 6,
-    },
-    {
-      id: "7",
-      playerName: "Thechamps3",
-      teamName: "ANGELS",
-      energyPoints: 10,
-      rank: 7,
-    },
-    {
-      id: "8",
-      playerName: "HumanoOnce",
-      teamName: "Seres Humanos",
-      energyPoints: 400,
-      rank: 1,
-    },
-  ];
+  // Fetch all registrations from API
+  const { data: registrations = [], isLoading, refetch } = useQuery<FactionRegistration[]>({
+    queryKey: ["/api/registrations"],
+  });
 
-  const rosettaData: LeaderboardEntry[] = [
-    {
-      id: "9",
-      playerName: "HumanoOnce",
-      teamName: "Seres Humanos", 
-      energyPoints: 400,
-      rank: 1,
-    },
-    {
-      id: "10",
-      playerName: "RosettaPlayer2",
-      teamName: "Blue Team",
-      energyPoints: 350,
-      rank: 2,
-    },
-    {
-      id: "11",
-      playerName: "CrystalMaster",
-      teamName: "Diamond Guild",
-      energyPoints: 300,
-      rank: 3,
-    },
-    {
-      id: "12",
-      playerName: "BlueStorm",
-      teamName: "Storm Legion",
-      energyPoints: 250,
-      rank: 4,
-    },
-  ];
+  // Convert faction registrations to leaderboard entries
+  const convertToLeaderboardEntry = (registration: FactionRegistration, rank: number): LeaderboardEntry => ({
+    id: registration.id || "",
+    playerName: registration.playerName,
+    teamName: registration.characterUuid || "Sin equipo", // Use UUID as team name or default
+    energyPoints: 0, // Default energy points for new registrations
+    rank: rank,
+  });
+
+  // Filter and rank registrations by faction
+  const efemeriosRegistrations = registrations.filter(r => r.faction === "efemeros");
+  const rosettaRegistrations = registrations.filter(r => r.faction === "rosetta");
+
+  const efemeriosData: LeaderboardEntry[] = efemeriosRegistrations.map((reg, index) => 
+    convertToLeaderboardEntry(reg, index + 1)
+  );
+
+  const rosettaData: LeaderboardEntry[] = rosettaRegistrations.map((reg, index) => 
+    convertToLeaderboardEntry(reg, index + 1)
+  );
 
   const currentData = activeCategory === "efemeros" ? efemeriosData : rosettaData;
 
@@ -125,7 +62,13 @@ export default function Leaderboard() {
               className="sm:max-w-md border-slate-600"
               style={{ backgroundColor: "#1a1a1a" }}
             >
-              <RegistrationForm onClose={() => setIsRegistrationOpen(false)} />
+              <RegistrationForm 
+                onClose={() => setIsRegistrationOpen(false)}
+                onSuccess={() => {
+                  refetch(); // Refresh leaderboard data after registration
+                  setIsRegistrationOpen(false);
+                }}
+              />
             </DialogContent>
           </Dialog>
         </div>

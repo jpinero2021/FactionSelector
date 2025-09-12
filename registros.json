@@ -5,5 +5,19 @@
     "playerName": "asdas",
     "characterUuid": "123124124",
     "registeredAt": "2025-09-12T03:19:07.209Z"
+  },
+  {
+    "id": "2b45f792-d62f-48d9-9fee-4395cc850793",
+    "faction": "efemeros",
+    "playerName": "asdasd",
+    "characterUuid": "asdasd",
+    "registeredAt": "2025-09-12T03:28:29.927Z"
+  },
+  {
+    "id": "ea2a034b-7beb-4b9d-b366-e8e49f50d71c",
+    "faction": "rosetta",
+    "playerName": "TestPlayer123",
+    "characterUuid": "test-uuid-456",
+    "registeredAt": "2025-09-12T03:36:34.136Z"
   }
 ]
