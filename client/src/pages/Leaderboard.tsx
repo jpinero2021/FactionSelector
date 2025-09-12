@@ -50,8 +50,22 @@ export default function Leaderboard() {
       <div className="w-full max-w-4xl mx-auto shadow-2xl">
         {/* Title */}
         <div className="text-center mb-8">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-2 bg-gradient-to-r from-cyan-400 via-purple-400 to-blue-400 bg-clip-text text-transparent">
-            Prismaverso 88
+          <h1 
+            className={`text-4xl md:text-5xl font-bold mb-2 transition-all duration-500 ${
+              activeCategory === "efemeros" 
+                ? "bg-gradient-to-r from-cyan-300 via-blue-400 to-cyan-300 bg-clip-text text-transparent" 
+                : "bg-gradient-to-r from-red-300 via-red-400 to-red-300 bg-clip-text text-transparent"
+            }`}
+            style={{
+              filter: activeCategory === "efemeros" 
+                ? "drop-shadow(0 0 20px rgba(59, 130, 246, 0.8)) drop-shadow(0 0 40px rgba(59, 130, 246, 0.4))" 
+                : "drop-shadow(0 0 20px rgba(239, 68, 68, 0.8)) drop-shadow(0 0 40px rgba(239, 68, 68, 0.4))",
+              textShadow: activeCategory === "efemeros"
+                ? "0 0 10px rgba(59, 130, 246, 0.6), 0 0 20px rgba(59, 130, 246, 0.4), 0 0 30px rgba(59, 130, 246, 0.2)"
+                : "0 0 10px rgba(239, 68, 68, 0.6), 0 0 20px rgba(239, 68, 68, 0.4), 0 0 30px rgba(239, 68, 68, 0.2)"
+            }}
+          >
+            PRISMAVERSO 88
           </h1>
         </div>
         
