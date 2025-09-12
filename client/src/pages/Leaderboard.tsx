@@ -60,10 +60,16 @@ export default function Leaderboard() {
           <Dialog open={isRegistrationOpen} onOpenChange={setIsRegistrationOpen}>
             <DialogTrigger asChild>
               <Button
-                className="bg-slate-700 hover:bg-slate-800 text-white font-semibold px-6 py-2"
+                className="relative px-8 py-3 text-white font-bold tracking-wider text-lg bg-gradient-to-r from-red-800 via-red-600 to-red-800 hover:from-red-900 hover:via-red-700 hover:to-red-900 shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 border border-red-500/50 rounded-md"
+                style={{
+                  background: "linear-gradient(90deg, #7f1d1d 0%, #dc2626 20%, #ef4444 50%, #dc2626 80%, #7f1d1d 100%)",
+                  boxShadow: "0 4px 15px rgba(239, 68, 68, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.1)",
+                  textShadow: "0 1px 2px rgba(0, 0, 0, 0.8)"
+                }}
                 data-testid="button-open-registration"
               >
-                Registrarse
+                <span className="relative z-10">REGISTRARSE</span>
+                <div className="absolute inset-0 bg-gradient-to-b from-white/10 to-transparent rounded-md"></div>
               </Button>
             </DialogTrigger>
             <DialogContent 

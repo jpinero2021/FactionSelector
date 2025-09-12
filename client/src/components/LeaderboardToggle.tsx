@@ -25,7 +25,7 @@ export default function LeaderboardToggle({ activeCategory, onCategoryChange }: 
           className={`flex flex-col cursor-pointer transition-all duration-500 ease-in-out justify-self-end text-right ${
             activeCategory === "efemeros" 
               ? "opacity-100 scale-110" 
-              : "opacity-70 scale-95"
+              : "opacity-90 scale-95"
           }`}
           onClick={() => onCategoryChange("efemeros")}
           data-testid="button-toggle-efemeros"
@@ -33,7 +33,7 @@ export default function LeaderboardToggle({ activeCategory, onCategoryChange }: 
           <h1 className={`font-bold tracking-wide transition-all duration-500 ${
             activeCategory === "efemeros" 
               ? "text-white text-4xl" 
-              : "text-white/80 text-2xl"
+              : "text-white/90 text-2xl"
           }`}>
             Efémeros
           </h1>
@@ -52,7 +52,7 @@ export default function LeaderboardToggle({ activeCategory, onCategoryChange }: 
               style={{
                 filter: activeCategory === "efemeros" 
                   ? "brightness(1.3) drop-shadow(0 0 10px rgba(59, 130, 246, 0.5))" 
-                  : "brightness(0.7)"
+                  : "brightness(1.0)"
               }}
             />
           </div>
@@ -74,7 +74,7 @@ export default function LeaderboardToggle({ activeCategory, onCategoryChange }: 
               style={{
                 filter: activeCategory === "rosetta" 
                   ? "brightness(1.3) drop-shadow(0 0 10px rgba(220, 38, 38, 0.5))" 
-                  : "brightness(0.7)"
+                  : "brightness(1.0)"
               }}
             />
           </div>
@@ -85,7 +85,7 @@ export default function LeaderboardToggle({ activeCategory, onCategoryChange }: 
           className={`flex items-center cursor-pointer transition-all duration-500 ease-in-out justify-self-start text-left ${
             activeCategory === "rosetta" 
               ? "opacity-100 scale-110" 
-              : "opacity-70 scale-95"
+              : "opacity-90 scale-95"
           }`}
           onClick={() => onCategoryChange("rosetta")}
           data-testid="button-toggle-rosetta"
@@ -93,7 +93,7 @@ export default function LeaderboardToggle({ activeCategory, onCategoryChange }: 
           <h1 className={`font-bold tracking-wide transition-all duration-500 ${
             activeCategory === "rosetta" 
               ? "text-white text-4xl" 
-              : "text-white/80 text-2xl"
+              : "text-white/90 text-2xl"
           }`}>
             Rosetta
           </h1>
