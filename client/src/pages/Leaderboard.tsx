@@ -73,10 +73,15 @@ export default function Leaderboard() {
           <Dialog open={isRegistrationOpen} onOpenChange={setIsRegistrationOpen}>
             <DialogTrigger asChild>
               <Button
-                className="relative px-8 py-3 text-white font-bold tracking-wider text-lg bg-gradient-to-r from-red-800 via-red-600 to-red-800 hover:from-red-900 hover:via-red-700 hover:to-red-900 shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 border border-red-500/50 rounded-md"
+                className="relative px-8 py-3 text-white font-bold tracking-wider text-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 rounded-md"
                 style={{
-                  background: "linear-gradient(90deg, #7f1d1d 0%, #dc2626 20%, #ef4444 50%, #dc2626 80%, #7f1d1d 100%)",
-                  boxShadow: "0 4px 15px rgba(239, 68, 68, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.1)",
+                  background: activeCategory === "efemeros"
+                    ? "linear-gradient(90deg, #1e40af 0%, #3b82f6 20%, #60a5fa 50%, #3b82f6 80%, #1e40af 100%)"
+                    : "linear-gradient(90deg, #7f1d1d 0%, #dc2626 20%, #ef4444 50%, #dc2626 80%, #7f1d1d 100%)",
+                  boxShadow: activeCategory === "efemeros"
+                    ? "0 4px 15px rgba(59, 130, 246, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.1)"
+                    : "0 4px 15px rgba(239, 68, 68, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.1)",
+                  border: activeCategory === "efemeros" ? "1px solid rgba(59, 130, 246, 0.5)" : "1px solid rgba(239, 68, 68, 0.5)",
                   textShadow: "0 1px 2px rgba(0, 0, 0, 0.8)"
                 }}
                 data-testid="button-open-registration"
