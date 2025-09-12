@@ -33,11 +33,11 @@ export default function LeaderboardToggle({ activeCategory, onCategoryChange }: 
       {/* Center Icons */}
       <div className="flex items-center gap-6">
         {/* Mayfly/Efémeros Logo */}
-        <div className="w-16 h-16 flex items-center justify-center">
+        <div className="w-20 h-20 flex items-center justify-center">
           <img 
             src={mayflyLogo} 
             alt="Mayfly Logo" 
-            className="w-12 h-12 object-contain"
+            className="w-16 h-16 object-contain"
             style={{
               filter: activeCategory === "efemeros" ? "brightness(1.2)" : "brightness(0.8)"
             }}
@@ -46,16 +46,16 @@ export default function LeaderboardToggle({ activeCategory, onCategoryChange }: 
         
         {/* Arrow/Separator */}
         <div className="flex items-center">
-          <div className="w-8 h-1 bg-white/70"></div>
+          <div className="w-10 h-1 bg-white/70"></div>
           <div className="w-0 h-0 border-l-4 border-l-white/70 border-t-2 border-t-transparent border-b-2 border-b-transparent ml-1"></div>
         </div>
         
         {/* Rossetta Logo */}
-        <div className="w-16 h-16 flex items-center justify-center">
+        <div className="w-20 h-20 flex items-center justify-center">
           <img 
             src={rossettaLogo} 
             alt="Rossetta Logo" 
-            className="w-12 h-12 object-contain"
+            className="w-16 h-16 object-contain"
             style={{
               filter: activeCategory === "rosetta" ? "brightness(1.2)" : "brightness(0.8)"
             }}
