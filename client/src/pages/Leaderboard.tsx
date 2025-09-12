@@ -5,7 +5,8 @@ import LeaderboardTable, { LeaderboardEntry } from "@/components/LeaderboardTabl
 import RegistrationForm from "@/components/RegistrationForm";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
-import { Plus } from "lucide-react";
+import { Input } from "@/components/ui/input";
+import { Plus, Search, X } from "lucide-react";
 import { FactionRegistration } from "@shared/schema";
 import efemerosLogo from "@assets/bg remover_1757655880929.png";
 import rosettaLogo from "@assets/asdqwe_1757655899796.png";
@@ -13,6 +14,7 @@ import rosettaLogo from "@assets/asdqwe_1757655899796.png";
 export default function Leaderboard() {
   const [activeCategory, setActiveCategory] = useState<"efemeros" | "rosetta">("efemeros");
   const [isRegistrationOpen, setIsRegistrationOpen] = useState(false);
+  const [searchTerm, setSearchTerm] = useState("");
 
   // Fetch all registrations from API
   const { data: registrations = [], isLoading, refetch } = useQuery<FactionRegistration[]>({
@@ -42,7 +44,22 @@ export default function Leaderboard() {
     convertToLeaderboardEntry(reg, index + 1)
   );
 
-  const currentData = activeCategory === "efemeros" ? efemeriosData : rosettaData;
+  // Filter data based on search term
+  const filterData = (data: LeaderboardEntry[]) => {
+    if (!searchTerm.trim()) return data;
+    
+    const term = searchTerm.toLowerCase();
+    return data.filter(entry => 
+      entry.playerName.toLowerCase().includes(term) ||
+      entry.teamName.toLowerCase().includes(term) ||
+      entry.characterUuid.toLowerCase().includes(term)
+    ).map((entry, index) => ({
+      ...entry,
+      rank: index + 1 // Re-rank filtered results
+    }));
+  };
+
+  const currentData = filterData(activeCategory === "efemeros" ? efemeriosData : rosettaData);
 
   return (
     <div 
@@ -98,6 +115,38 @@ export default function Leaderboard() {
               />
             </DialogContent>
           </Dialog>
+        </div>
+
+        {/* Search Bar */}
+        <div className="flex justify-center mb-6">
+          <div className="relative w-full max-w-md">
+            <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+              <Search className="h-5 w-5 text-gray-400" />
+            </div>
+            <Input
+              type="text"
+              placeholder="Buscar jugador, equipo o UUID..."
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+              className="pl-11 pr-10 py-3 bg-black/30 border border-gray-600/50 text-white placeholder:text-gray-400 focus:border-blue-500/60 focus:ring-2 focus:ring-blue-500/20 rounded-lg backdrop-blur-sm transition-all duration-300"
+              style={{
+                background: "rgba(26, 26, 26, 0.7)",
+                boxShadow: activeCategory === "efemeros"
+                  ? "0 0 0 1px rgba(59, 130, 246, 0.2), 0 2px 8px rgba(0, 0, 0, 0.3)"
+                  : "0 0 0 1px rgba(239, 68, 68, 0.2), 0 2px 8px rgba(0, 0, 0, 0.3)"
+              }}
+              data-testid="input-search"
+            />
+            {searchTerm && (
+              <button
+                onClick={() => setSearchTerm("")}
+                className="absolute inset-y-0 right-0 pr-4 flex items-center text-gray-400 hover:text-white transition-colors duration-200"
+                data-testid="button-clear-search"
+              >
+                <X className="h-4 w-4" />
+              </button>
+            )}
+          </div>
         </div>
 
         <LeaderboardToggle 
