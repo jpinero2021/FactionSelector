@@ -218,6 +218,7 @@
     background-position: center;
     background-attachment: fixed;
     background-repeat: no-repeat;
+    filter: brightness(0.3) contrast(0.8) grayscale(0.4);
   }
 }
 
