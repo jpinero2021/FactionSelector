@@ -46,9 +46,6 @@ export default function Leaderboard() {
   return (
     <div 
       className="min-h-screen flex items-center justify-center py-8"
-      style={{
-        backgroundColor: "#1a1a1a"
-      }}
     >
       <div className="w-full max-w-4xl mx-auto shadow-2xl">
         {/* Title */}
@@ -71,7 +68,7 @@ export default function Leaderboard() {
             </DialogTrigger>
             <DialogContent 
               className="w-[95vw] max-w-2xl max-h-[90vh] overflow-y-auto border-slate-600 z-50"
-              style={{ backgroundColor: "#1a1a1a" }}
+              style={{ backgroundColor: "rgba(26, 26, 26, 0.95)" }}
             >
               <RegistrationForm 
                 onClose={() => setIsRegistrationOpen(false)}
@@ -98,7 +95,7 @@ export default function Leaderboard() {
         <div 
           className="mt-6 px-8 py-6 border-t border-gray-600"
           style={{
-            background: "linear-gradient(90deg, #1e40af 0%, #2a2a2a 50%, #dc2626 100%)"
+            background: "linear-gradient(90deg, rgba(30, 64, 175, 0.85) 0%, rgba(42, 42, 42, 0.85) 50%, rgba(220, 38, 38, 0.85) 100%)"
           }}
         >
           <div className="flex items-center justify-center gap-8">

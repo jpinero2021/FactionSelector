@@ -213,6 +213,11 @@
 
   body {
     @apply font-sans antialiased bg-background text-foreground;
+    background-image: url("@assets/Game-Page-Featured_Once-Human-Inits_1757658385386.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
   }
 }
 

@@ -92,7 +92,7 @@ export default function RegistrationForm({ onClose, onSuccess }: RegistrationFor
     <div 
       className="p-4 sm:p-6 rounded-lg border border-slate-600 w-full mx-auto"
       style={{
-        backgroundColor: "#2a2a2a"
+        backgroundColor: "rgba(42, 42, 42, 0.85)"
       }}
     >
       <h2 className="text-xl font-bold text-white mb-6 text-center">Registro de Facción</h2>

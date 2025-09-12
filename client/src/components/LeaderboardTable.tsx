@@ -66,7 +66,7 @@ export default function LeaderboardTable({ entries, category }: LeaderboardTable
         <div 
           className="grid grid-cols-5 gap-6 px-8 py-4"
           style={{
-            backgroundColor: "#1a1a1a"
+            backgroundColor: "rgba(26, 26, 26, 0.85)"
           }}
         >
           <div className="text-gray-400 text-sm font-medium">Clasificación</div>
@@ -89,7 +89,7 @@ export default function LeaderboardTable({ entries, category }: LeaderboardTable
               key={entry.id}
               className="grid grid-cols-5 gap-6 px-8 py-4 hover:bg-gray-700/20 transition-colors"
               style={{
-                backgroundColor: "#2a2a2a"
+                backgroundColor: "rgba(42, 42, 42, 0.85)"
               }}
               data-testid={`row-player-${entry.rank}`}
             >
