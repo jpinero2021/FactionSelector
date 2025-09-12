@@ -60,5 +60,32 @@
     "teamName": "ddsadsdsf",
     "registeredAt": "2025-09-12T06:53:53.249Z",
     "ownerSecret": "be033f74-9828-4291-9e0a-099b7a82f5ba"
+  },
+  {
+    "id": "51ef286f-6cdf-4906-965a-918e9b0526f5",
+    "faction": "efemeros",
+    "playerName": "aaaa",
+    "characterUuid": "aaaaaaa",
+    "teamName": "aaaaaaa",
+    "registeredAt": "2025-09-12T15:15:28.470Z",
+    "ownerSecret": "5787fd85-f1c7-454f-94dd-8dc949f2d8fa"
+  },
+  {
+    "id": "3baa7f15-1734-4596-8d1d-14821f35316c",
+    "faction": "efemeros",
+    "playerName": "vbbbbbb",
+    "characterUuid": "bbbbbbbbbb",
+    "teamName": "bbbb",
+    "registeredAt": "2025-09-12T15:15:37.673Z",
+    "ownerSecret": "385a2c9f-5b67-4032-92f7-a9407d83e1d6"
+  },
+  {
+    "id": "20cfc330-e2e7-4567-83a4-26e94b1203af",
+    "faction": "efemeros",
+    "playerName": "asdasdqwe",
+    "characterUuid": "dasdasd",
+    "teamName": "asdas",
+    "registeredAt": "2025-09-12T15:15:45.183Z",
+    "ownerSecret": "045a259f-179f-4c1b-9f6a-f365b4101ebd"
   }
 ]
