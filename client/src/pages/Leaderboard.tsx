@@ -117,8 +117,13 @@ export default function Leaderboard() {
           </Dialog>
         </div>
 
-        {/* Search Bar */}
-        <div className="flex justify-center mb-6">
+        <LeaderboardToggle 
+          activeCategory={activeCategory}
+          onCategoryChange={setActiveCategory}
+        />
+        
+        {/* Search Bar - Positioned above table header */}
+        <div className="flex justify-center mb-4 mt-8">
           <div className="relative w-full max-w-md">
             <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
               <Search className="h-5 w-5 text-gray-400" />
@@ -148,11 +153,6 @@ export default function Leaderboard() {
             )}
           </div>
         </div>
-
-        <LeaderboardToggle 
-          activeCategory={activeCategory}
-          onCategoryChange={setActiveCategory}
-        />
         
         <LeaderboardTable 
           entries={currentData}
