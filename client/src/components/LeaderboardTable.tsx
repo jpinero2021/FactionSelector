@@ -15,25 +15,18 @@ interface LeaderboardTableProps {
 
 export default function LeaderboardTable({ entries, category }: LeaderboardTableProps) {
   return (
-    <div 
-      className="overflow-hidden"
-      style={{
-        backgroundColor: "#2d3748",
-        border: "1px solid #4a5568"
-      }}
-    >
+    <div className="w-full">
       {/* Header */}
       <div 
-        className="grid grid-cols-4 gap-4 px-6 py-4 border-b"
+        className="grid grid-cols-4 gap-6 px-8 py-4"
         style={{
-          backgroundColor: "#1a202c",
-          borderColor: "#4a5568"
+          backgroundColor: "#1a1a1a"
         }}
       >
-        <div className="text-slate-400 text-sm font-medium">Clasificación</div>
-        <div className="text-slate-400 text-sm font-medium">Jugador</div>
-        <div className="text-slate-400 text-sm font-medium">Colmena</div>
-        <div className="text-slate-400 text-sm font-medium text-right">Energía de prisma</div>
+        <div className="text-gray-400 text-sm font-medium">Clasificación</div>
+        <div className="text-gray-400 text-sm font-medium">Jugador</div>
+        <div className="text-gray-400 text-sm font-medium">Colmena</div>
+        <div className="text-gray-400 text-sm font-medium text-right">Energía de prisma</div>
       </div>
 
       {/* Entries */}
@@ -41,9 +34,9 @@ export default function LeaderboardTable({ entries, category }: LeaderboardTable
         {entries.map((entry, index) => (
           <div
             key={entry.id}
-            className="grid grid-cols-4 gap-4 px-6 py-4 hover-elevate transition-colors border-b border-slate-600/30"
+            className="grid grid-cols-4 gap-6 px-8 py-4 hover:bg-gray-700/20 transition-colors"
             style={{
-              backgroundColor: index % 2 === 0 ? "#2d3748" : "#374151"
+              backgroundColor: "#2a2a2a"
             }}
             data-testid={`row-player-${entry.rank}`}
           >
@@ -54,17 +47,17 @@ export default function LeaderboardTable({ entries, category }: LeaderboardTable
 
             {/* Player Name */}
             <div className="flex items-center">
-              <span className="text-white font-medium">{entry.playerName}</span>
+              <span className="text-white font-normal text-base">{entry.playerName}</span>
             </div>
 
             {/* Team Name */}
             <div className="flex items-center">
-              <span className="text-slate-300">{entry.teamName}</span>
+              <span className="text-gray-300 font-normal text-base">{entry.teamName}</span>
             </div>
 
             {/* Energy Points */}
             <div className="flex items-center justify-end">
-              <span className="text-white font-semibold">{entry.energyPoints}</span>
+              <span className="text-white font-normal text-base">{entry.energyPoints}</span>
             </div>
           </div>
         ))}

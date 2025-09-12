@@ -102,7 +102,7 @@ export default function Leaderboard() {
     <div 
       className="min-h-screen"
       style={{
-        backgroundColor: "#1a202c"
+        backgroundColor: "#1a1a1a"
       }}
     >
       <LeaderboardToggle 
@@ -110,12 +110,10 @@ export default function Leaderboard() {
         onCategoryChange={setActiveCategory}
       />
       
-      <div className="px-0">
-        <LeaderboardTable 
-          entries={currentData}
-          category={activeCategory}
-        />
-      </div>
+      <LeaderboardTable 
+        entries={currentData}
+        category={activeCategory}
+      />
     </div>
   );
 }

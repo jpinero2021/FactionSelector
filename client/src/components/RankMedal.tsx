@@ -5,31 +5,52 @@ interface RankMedalProps {
 export default function RankMedal({ rank }: RankMedalProps) {
   if (rank === 1) {
     return (
-      <div className="w-8 h-8 rounded-full bg-gradient-to-br from-yellow-400 to-yellow-600 flex items-center justify-center border-2 border-yellow-300/50">
-        <span className="text-yellow-900 font-bold text-sm">1</span>
+      <div 
+        className="w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold border-2"
+        style={{
+          background: "radial-gradient(circle, #ffd700 0%, #ffed4e 40%, #b8860b 100%)",
+          borderColor: "#ffd700",
+          color: "#8b6914"
+        }}
+      >
+        1
       </div>
     );
   }
 
   if (rank === 2) {
     return (
-      <div className="w-8 h-8 rounded-full bg-gradient-to-br from-gray-300 to-gray-500 flex items-center justify-center border-2 border-gray-200/50">
-        <span className="text-gray-700 font-bold text-sm">2</span>
+      <div 
+        className="w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold border-2"
+        style={{
+          background: "radial-gradient(circle, #c0c0c0 0%, #e5e5e5 40%, #a0a0a0 100%)",
+          borderColor: "#c0c0c0",
+          color: "#555555"
+        }}
+      >
+        2
       </div>
     );
   }
 
   if (rank === 3) {
     return (
-      <div className="w-8 h-8 rounded-full bg-gradient-to-br from-amber-600 to-amber-800 flex items-center justify-center border-2 border-amber-400/50">
-        <span className="text-amber-100 font-bold text-sm">3</span>
+      <div 
+        className="w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold border-2"
+        style={{
+          background: "radial-gradient(circle, #cd7f32 0%, #daa520 40%, #8b4513 100%)",
+          borderColor: "#cd7f32",
+          color: "#4a2c17"
+        }}
+      >
+        3
       </div>
     );
   }
 
   return (
-    <div className="w-8 h-8 flex items-center justify-center">
-      <span className="text-muted-foreground font-medium text-sm">{rank}</span>
+    <div className="w-7 h-7 flex items-center justify-center">
+      <span className="text-gray-400 font-medium text-sm">{rank}</span>
     </div>
   );
 }
