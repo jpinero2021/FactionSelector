@@ -18,6 +18,16 @@ export const leaderboardEntries = pgTable("leaderboard_entries", {
   rank: integer("rank").notNull(),
 });
 
+export const factionRegistrations = pgTable("faction_registrations", {
+  id: varchar("id").primaryKey().default(sql`gen_random_uuid()`),
+  faction: text("faction").notNull(), // "efemeros" or "rosetta"
+  playerName: text("player_name").notNull().unique(),
+  characterUuid: text("character_uuid"),
+  teamName: text("team_name"),
+  registeredAt: text("registered_at").notNull().default(sql`CURRENT_TIMESTAMP`),
+  ownerSecret: text("owner_secret").notNull(),
+});
+
 export const insertUserSchema = createInsertSchema(users).pick({
   username: true,
   password: true,
@@ -29,6 +39,17 @@ export const insertLeaderboardEntrySchema = createInsertSchema(leaderboardEntrie
   energyPoints: true,
   category: true,
   rank: true,
+});
+
+export const insertFactionRegistrationSchema = createInsertSchema(factionRegistrations).omit({
+  id: true,
+  registeredAt: true,
+});
+
+export const insertFactionRegistrationNoSecretSchema = createInsertSchema(factionRegistrations).omit({
+  id: true,
+  registeredAt: true,
+  ownerSecret: true,
 });
 
 // Registro de facción schema
@@ -54,5 +75,7 @@ export type InsertUser = z.infer<typeof insertUserSchema>;
 export type User = typeof users.$inferSelect;
 export type InsertLeaderboardEntry = z.infer<typeof insertLeaderboardEntrySchema>;
 export type LeaderboardEntry = typeof leaderboardEntries.$inferSelect;
+export type DbFactionRegistration = typeof factionRegistrations.$inferSelect;
+export type InsertDbFactionRegistration = z.infer<typeof insertFactionRegistrationSchema>;
 export type FactionRegistration = z.infer<typeof factionRegistrationSchema>;
 export type InsertFactionRegistration = Omit<FactionRegistration, 'id' | 'registeredAt' | 'ownerSecret'>;
