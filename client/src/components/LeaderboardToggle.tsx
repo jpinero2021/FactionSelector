@@ -1,3 +1,6 @@
+import mayflyLogo from "@assets/bg remover_1757650181268.png";
+import rossettaLogo from "@assets/asdqwe_1757650181266.png";
+
 interface LeaderboardToggleProps {
   activeCategory: "efemeros" | "rosetta";
   onCategoryChange: (category: "efemeros" | "rosetta") => void;
@@ -29,13 +32,16 @@ export default function LeaderboardToggle({ activeCategory, onCategoryChange }: 
 
       {/* Center Icons */}
       <div className="flex items-center gap-6">
-        {/* Crystal Wing Icon */}
+        {/* Mayfly/Efémeros Logo */}
         <div className="w-16 h-16 flex items-center justify-center">
-          <svg width="48" height="48" viewBox="0 0 100 100" fill="none" className="text-cyan-200">
-            <path d="M50 10 L30 25 L35 50 L50 85 L65 50 L70 25 Z" fill="currentColor" opacity="0.8"/>
-            <path d="M50 10 L25 30 L30 55 L50 90 L70 55 L75 30 Z" fill="currentColor" opacity="0.6"/>
-            <path d="M50 15 L35 30 L40 50 L50 80 L60 50 L65 30 Z" fill="currentColor" opacity="0.9"/>
-          </svg>
+          <img 
+            src={mayflyLogo} 
+            alt="Mayfly Logo" 
+            className="w-12 h-12 object-contain"
+            style={{
+              filter: activeCategory === "efemeros" ? "brightness(1.2)" : "brightness(0.8)"
+            }}
+          />
         </div>
         
         {/* Arrow/Separator */}
@@ -44,18 +50,16 @@ export default function LeaderboardToggle({ activeCategory, onCategoryChange }: 
           <div className="w-0 h-0 border-l-4 border-l-white/70 border-t-2 border-t-transparent border-b-2 border-b-transparent ml-1"></div>
         </div>
         
-        {/* Rosetta Icon */}
+        {/* Rossetta Logo */}
         <div className="w-16 h-16 flex items-center justify-center">
-          <div 
-            className="w-12 h-12 flex items-center justify-center text-2xl font-bold"
+          <img 
+            src={rossettaLogo} 
+            alt="Rossetta Logo" 
+            className="w-12 h-12 object-contain"
             style={{
-              background: "linear-gradient(45deg, #a0aec0, #e2e8f0, #a0aec0)",
-              color: "#2d3748",
-              clipPath: "polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%)"
+              filter: activeCategory === "rosetta" ? "brightness(1.2)" : "brightness(0.8)"
             }}
-          >
-            R
-          </div>
+          />
         </div>
       </div>
 
