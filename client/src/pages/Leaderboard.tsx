@@ -46,13 +46,13 @@ export default function Leaderboard() {
         backgroundColor: "#1a1a1a"
       }}
     >
-      <div className="w-full max-w-4xl mx-auto shadow-2xl relative">
-        {/* Registration Button */}
-        <div className="absolute top-4 right-4 z-10">
+      <div className="w-full max-w-4xl mx-auto shadow-2xl">
+        {/* Registration Button - Moved to top */}
+        <div className="flex justify-center mb-6">
           <Dialog open={isRegistrationOpen} onOpenChange={setIsRegistrationOpen}>
             <DialogTrigger asChild>
               <Button
-                className="bg-green-600 hover:bg-green-700 text-white font-semibold px-4 py-2"
+                className="bg-slate-700 hover:bg-slate-800 text-white font-semibold px-6 py-2"
                 data-testid="button-open-registration"
               >
                 Registrarse

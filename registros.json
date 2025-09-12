@@ -19,5 +19,12 @@
     "playerName": "TestPlayer123",
     "characterUuid": "test-uuid-456",
     "registeredAt": "2025-09-12T03:36:34.136Z"
+  },
+  {
+    "id": "e62f1c05-6f82-4bed-8bc3-f1e5a63d7f80",
+    "faction": "rosetta",
+    "playerName": "asdas",
+    "characterUuid": "asd",
+    "registeredAt": "2025-09-12T03:46:37.232Z"
   }
 ]
