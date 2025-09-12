@@ -1,7 +1,7 @@
 import type { Express } from "express";
 import { createServer, type Server } from "http";
 import { storage } from "./storage";
-import { factionRegistrationSchema } from "@shared/schema";
+import { factionRegistrationSchema, updateRegistrationSchema } from "@shared/schema";
 import { z, ZodError } from "zod";
 
 export async function registerRoutes(app: Express): Promise<Server> {
@@ -15,7 +15,9 @@ export async function registerRoutes(app: Express): Promise<Server> {
   app.get("/api/registrations", async (req, res) => {
     try {
       const registrations = await storage.getFactionRegistrations();
-      res.json(registrations);
+      // Sanitize response: remove ownerSecret for security
+      const sanitizedRegistrations = registrations.map(({ ownerSecret, ...reg }) => reg);
+      res.json(sanitizedRegistrations);
     } catch (error) {
       res.status(500).json({ error: "Error fetching registrations" });
     }
@@ -30,7 +32,9 @@ export async function registerRoutes(app: Express): Promise<Server> {
       }
       
       const registrations = await storage.getRegistrationsByFaction(faction);
-      res.json(registrations);
+      // Sanitize response: remove ownerSecret for security
+      const sanitizedRegistrations = registrations.map(({ ownerSecret, ...reg }) => reg);
+      res.json(sanitizedRegistrations);
     } catch (error) {
       res.status(500).json({ error: "Error fetching registrations" });
     }
@@ -75,7 +79,9 @@ export async function registerRoutes(app: Express): Promise<Server> {
         return res.status(404).json({ error: "Registration not found" });
       }
       
-      res.json(updatedRegistration);
+      // Sanitize response: remove ownerSecret for security
+      const { ownerSecret: _, ...sanitizedRegistration } = updatedRegistration;
+      res.json(sanitizedRegistration);
     } catch (error) {
       if (error instanceof ZodError) {
         return res.status(400).json({ error: "Invalid faction", details: error.errors });
@@ -84,6 +90,39 @@ export async function registerRoutes(app: Express): Promise<Server> {
         return res.status(403).json({ error: "You are not authorized to modify this registration" });
       }
       res.status(500).json({ error: "Error updating registration faction" });
+    }
+  });
+
+  // Update registration
+  app.put("/api/registrations/:id", async (req, res) => {
+    try {
+      const { id } = req.params;
+      const updateData = updateRegistrationSchema.parse(req.body);
+      
+      // Extract ownerSecret from headers
+      const ownerSecret = req.headers['x-registration-secret'] as string;
+      
+      if (!ownerSecret) {
+        return res.status(403).json({ error: "Registration secret required" });
+      }
+      
+      const updatedRegistration = await storage.updateRegistration(id, updateData, ownerSecret);
+      
+      if (!updatedRegistration) {
+        return res.status(404).json({ error: "Registration not found" });
+      }
+      
+      // Sanitize response: remove ownerSecret for security
+      const { ownerSecret: _, ...sanitizedRegistration } = updatedRegistration;
+      res.json(sanitizedRegistration);
+    } catch (error) {
+      if (error instanceof ZodError) {
+        return res.status(400).json({ error: "Invalid update data", details: error.errors });
+      }
+      if (error instanceof Error && error.message === 'UNAUTHORIZED') {
+        return res.status(403).json({ error: "You are not authorized to modify this registration" });
+      }
+      res.status(500).json({ error: "Error updating registration" });
     }
   });
 

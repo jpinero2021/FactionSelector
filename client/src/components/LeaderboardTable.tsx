@@ -4,7 +4,8 @@ import { Button } from "@/components/ui/button";
 import { useUserRegistration } from "@/hooks/use-user-registration";
 import ConfirmFactionChangeModal from "./ConfirmFactionChangeModal";
 import ConfirmDeleteRegistrationModal from "./ConfirmDeleteRegistrationModal";
-import { ArrowRightLeft, Trash2 } from "lucide-react";
+import EditRegistrationModal from "./EditRegistrationModal";
+import { ArrowRightLeft, Trash2, Edit } from "lucide-react";
 
 export interface LeaderboardEntry {
   id: string;
@@ -32,6 +33,10 @@ export default function LeaderboardTable({ entries, category }: LeaderboardTable
     isOpen: boolean;
     entry: LeaderboardEntry | null;
   }>({ isOpen: false, entry: null });
+  const [editModal, setEditModal] = useState<{
+    isOpen: boolean;
+    entry: LeaderboardEntry | null;
+  }>({ isOpen: false, entry: null });
 
   // Check if user owns this registration - MOVED AFTER ALL HOOKS
   const isUserRegistration = (entry: LeaderboardEntry) => {
@@ -44,6 +49,10 @@ export default function LeaderboardTable({ entries, category }: LeaderboardTable
 
   const handleDeleteRegistration = (entry: LeaderboardEntry) => {
     setDeleteModal({ isOpen: true, entry });
+  };
+
+  const handleEditRegistration = (entry: LeaderboardEntry) => {
+    setEditModal({ isOpen: true, entry });
   };
 
   const getNewFaction = (currentFaction: "efemeros" | "rosetta"): "efemeros" | "rosetta" => {
@@ -105,6 +114,16 @@ export default function LeaderboardTable({ entries, category }: LeaderboardTable
                     <Button
                       size="sm"
                       variant="outline"
+                      onClick={() => handleEditRegistration(entry)}
+                      className="border-blue-500/50 text-blue-400 hover:bg-blue-900/20 hover:border-blue-400 text-xs"
+                      data-testid={`button-edit-${entry.rank}`}
+                    >
+                      <Edit className="w-3 h-3 mr-1" />
+                      Editar
+                    </Button>
+                    <Button
+                      size="sm"
+                      variant="outline"
                       onClick={() => handleChangeFaction(entry)}
                       className="border-slate-600 text-gray-300 hover:bg-slate-700 text-xs"
                       data-testid={`button-change-faction-${entry.rank}`}
@@ -139,6 +158,21 @@ export default function LeaderboardTable({ entries, category }: LeaderboardTable
           playerName={factionChangeModal.entry.playerName}
           currentFaction={factionChangeModal.entry.faction}
           newFaction={getNewFaction(factionChangeModal.entry.faction)}
+        />
+      )}
+
+      {/* Edit Modal */}
+      {editModal.entry && (
+        <EditRegistrationModal
+          isOpen={editModal.isOpen}
+          onClose={() => setEditModal({ isOpen: false, entry: null })}
+          registrationId={editModal.entry.registrationId}
+          currentData={{
+            playerName: editModal.entry.playerName,
+            teamName: editModal.entry.teamName,
+            characterUuid: editModal.entry.characterUuid,
+            faction: editModal.entry.faction,
+          }}
         />
       )}
 

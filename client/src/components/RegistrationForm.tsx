@@ -151,14 +151,14 @@ export default function RegistrationForm({ onClose, onSuccess }: RegistrationFor
         {/* UUID del Personaje (opcional) */}
         <div className="space-y-2">
           <Label htmlFor="characterUuid" className="text-gray-300">
-            UUID del Personaje (opcional)
+            UUID del Personaje (puede ser numérico como 150464316)
           </Label>
           <Input
             id="characterUuid"
             type="text"
             value={characterUuid}
             onChange={(e) => setCharacterUuid(e.target.value)}
-            placeholder="ej: 123e4567-e89b-12d3-a456-426614174000"
+            placeholder="ej: 150464316 o abc-def-123"
             className="bg-slate-700 border-slate-600 text-white placeholder-gray-400"
             data-testid="input-character-uuid"
           />

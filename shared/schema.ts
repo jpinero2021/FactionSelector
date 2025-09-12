@@ -36,10 +36,18 @@ export const factionRegistrationSchema = z.object({
   id: z.string().optional(),
   faction: z.enum(["efemeros", "rosetta"]),
   playerName: z.string().min(1, "El nombre es requerido"),
-  characterUuid: z.string().optional(),
+  characterUuid: z.union([z.string(), z.number()]).transform(v => String(v)).optional(),
   teamName: z.string().optional(),
   registeredAt: z.string().optional(),
   ownerSecret: z.string().optional(),
+});
+
+// Update registration schema for editing existing registrations
+export const updateRegistrationSchema = z.object({
+  playerName: z.string().min(1, "El nombre es requerido").optional(),
+  teamName: z.string().optional(),
+  characterUuid: z.union([z.string(), z.number()]).transform(v => String(v)).optional(),
+  faction: z.enum(["efemeros", "rosetta"]).optional(),
 });
 
 export type InsertUser = z.infer<typeof insertUserSchema>;

@@ -18,6 +18,7 @@ export interface IStorage {
   createFactionRegistration(registration: InsertFactionRegistration): Promise<FactionRegistration>;
   getRegistrationsByFaction(faction: "efemeros" | "rosetta"): Promise<FactionRegistration[]>;
   getRegistrationById(id: string): Promise<FactionRegistration | undefined>;
+  updateRegistration(id: string, data: Partial<FactionRegistration>, ownerSecret: string): Promise<FactionRegistration | null>;
   updateRegistrationFaction(id: string, newFaction: "efemeros" | "rosetta", ownerSecret: string): Promise<FactionRegistration | null>;
   deleteRegistration(id: string, ownerSecret: string): Promise<boolean>;
   validateOwnerSecret(id: string, ownerSecret: string): Promise<boolean>;
@@ -126,6 +127,29 @@ export class MemStorage implements IStorage {
     await fs.writeFile(REGISTROS_FILE, JSON.stringify(filteredRegistrations, null, 2));
     
     return true;
+  }
+
+  async updateRegistration(id: string, data: Partial<FactionRegistration>, ownerSecret: string): Promise<FactionRegistration | null> {
+    const registrations = await this.getFactionRegistrations();
+    const registrationIndex = registrations.findIndex(reg => reg.id === id);
+    
+    if (registrationIndex === -1) {
+      return null; // Registration not found
+    }
+
+    // Validate owner secret
+    if (registrations[registrationIndex].ownerSecret !== ownerSecret) {
+      throw new Error('UNAUTHORIZED'); // Will be caught in routes to return 403
+    }
+
+    // Update allowed fields (don't allow changing id, registeredAt, ownerSecret)
+    const { id: _, registeredAt, ownerSecret: __, ...allowedData } = data;
+    Object.assign(registrations[registrationIndex], allowedData);
+    
+    // Save to file
+    await fs.writeFile(REGISTROS_FILE, JSON.stringify(registrations, null, 2));
+    
+    return registrations[registrationIndex];
   }
 
   async validateOwnerSecret(id: string, ownerSecret: string): Promise<boolean> {
