@@ -12,8 +12,8 @@ export default function LeaderboardToggle({ activeCategory, onCategoryChange }: 
       className="relative px-8 py-6 border-b-2 transition-all duration-700 ease-in-out overflow-hidden"
       style={{
         background: activeCategory === "efemeros" 
-          ? "linear-gradient(90deg, #1e40af 0%, #3b82f6 25%, #60a5fa 50%, #3b82f6 75%, #1e40af 100%)"
-          : "linear-gradient(90deg, #dc2626 0%, #ef4444 25%, #f87171 50%, #ef4444 75%, #dc2626 100%)",
+          ? "linear-gradient(90deg, rgba(30, 64, 175, 0.8) 0%, rgba(59, 130, 246, 0.8) 25%, rgba(96, 165, 250, 0.8) 50%, rgba(59, 130, 246, 0.8) 75%, rgba(30, 64, 175, 0.8) 100%)"
+          : "linear-gradient(90deg, rgba(220, 38, 38, 0.8) 0%, rgba(239, 68, 68, 0.8) 25%, rgba(248, 113, 113, 0.8) 50%, rgba(239, 68, 68, 0.8) 75%, rgba(220, 38, 38, 0.8) 100%)",
         borderBottomColor: "#2d3748"
       }}
     >
@@ -48,9 +48,9 @@ export default function LeaderboardToggle({ activeCategory, onCategoryChange }: 
         >
           <h1 className={`font-bold tracking-wide transition-all duration-500 ${
             activeCategory === "efemeros" 
-              ? "text-white text-4xl" 
-              : "text-white/90 text-2xl"
-          }`}>
+              ? "text-white text-4xl drop-shadow-lg" 
+              : "text-white text-2xl drop-shadow-md"
+          }`} style={{ textShadow: "2px 2px 4px rgba(0, 0, 0, 0.7)" }}>
             Efémeros
           </h1>
         </div>
@@ -108,9 +108,9 @@ export default function LeaderboardToggle({ activeCategory, onCategoryChange }: 
         >
           <h1 className={`font-bold tracking-wide transition-all duration-500 ${
             activeCategory === "rosetta" 
-              ? "text-white text-4xl" 
-              : "text-white/90 text-2xl"
-          }`}>
+              ? "text-white text-4xl drop-shadow-lg" 
+              : "text-white text-2xl drop-shadow-md"
+          }`} style={{ textShadow: "2px 2px 4px rgba(0, 0, 0, 0.7)" }}>
             Rosetta
           </h1>
         </div>

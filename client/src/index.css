@@ -347,11 +347,11 @@
 }
 
 .wave-track {
-  animation: wave-slide 12s linear infinite;
+  animation: wave-slide 20s linear infinite;
   will-change: transform;
 }
 
 .wave-track--slow {
-  animation-duration: 18s;
+  animation-duration: 30s;
   animation-direction: reverse;
 }
