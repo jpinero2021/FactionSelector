@@ -6,6 +6,8 @@ import RegistrationForm from "@/components/RegistrationForm";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import { FactionRegistration } from "@shared/schema";
+import efemerosLogo from "@assets/bg remover_1757655880929.png";
+import rosettaLogo from "@assets/asdqwe_1757655899796.png";
 
 export default function Leaderboard() {
   const [activeCategory, setActiveCategory] = useState<"efemeros" | "rosetta">("efemeros");
@@ -87,15 +89,56 @@ export default function Leaderboard() {
         
         {/* Faction Stats */}
         <div 
-          className="mt-6 px-8 py-4 text-center border-t border-gray-600"
+          className="mt-6 px-8 py-6 border-t border-gray-600"
           style={{
-            backgroundColor: "#2a2a2a"
+            background: "linear-gradient(90deg, #1e40af 0%, #2a2a2a 50%, #dc2626 100%)"
           }}
         >
-          <div className="text-gray-300 text-sm">
-            <span className="text-cyan-400 font-medium">Efémeros: {efemeriosRegistrations.length}</span>
-            <span className="mx-4 text-gray-500">vs</span>
-            <span className="text-blue-400 font-medium">Rosetta: {rosettaRegistrations.length}</span>
+          <div className="flex items-center justify-center gap-8">
+            {/* Efémeros Stats */}
+            <div className="flex items-center gap-3">
+              <div className="w-8 h-8 flex items-center justify-center">
+                <img 
+                  src={efemerosLogo} 
+                  alt="Efémeros" 
+                  className="w-6 h-6 object-contain"
+                  style={{
+                    filter: "brightness(1.2) drop-shadow(0 0 8px rgba(59, 130, 246, 0.6))"
+                  }}
+                />
+              </div>
+              <span className="text-cyan-300 font-bold text-lg">
+                Efémeros
+              </span>
+              <span className="text-white font-bold text-xl bg-cyan-600/30 px-3 py-1 rounded-full border border-cyan-500/50">
+                {efemeriosRegistrations.length}
+              </span>
+            </div>
+
+            {/* VS Separator */}
+            <div className="text-white/70 font-bold text-xl">
+              VS
+            </div>
+
+            {/* Rosetta Stats */}
+            <div className="flex items-center gap-3">
+              <span className="text-white font-bold text-xl bg-red-600/30 px-3 py-1 rounded-full border border-red-500/50">
+                {rosettaRegistrations.length}
+              </span>
+              <span className="text-red-300 font-bold text-lg">
+                Rosetta
+              </span>
+              <div className="w-8 h-8 flex items-center justify-center">
+                <img 
+                  src={rosettaLogo} 
+                  alt="Rosetta" 
+                  className="w-6 h-6 object-contain"
+                  style={{
+                    filter: "brightness(1.2) drop-shadow(0 0 8px rgba(239, 68, 68, 0.6))"
+                  }}
+                />
+              </div>
+            </div>
           </div>
         </div>
       </div>
