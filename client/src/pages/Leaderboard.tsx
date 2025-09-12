@@ -100,20 +100,22 @@ export default function Leaderboard() {
 
   return (
     <div 
-      className="min-h-screen"
+      className="min-h-screen flex items-center justify-center py-8"
       style={{
         backgroundColor: "#1a1a1a"
       }}
     >
-      <LeaderboardToggle 
-        activeCategory={activeCategory}
-        onCategoryChange={setActiveCategory}
-      />
-      
-      <LeaderboardTable 
-        entries={currentData}
-        category={activeCategory}
-      />
+      <div className="w-full max-w-4xl mx-auto shadow-2xl">
+        <LeaderboardToggle 
+          activeCategory={activeCategory}
+          onCategoryChange={setActiveCategory}
+        />
+        
+        <LeaderboardTable 
+          entries={currentData}
+          category={activeCategory}
+        />
+      </div>
     </div>
   );
 }
