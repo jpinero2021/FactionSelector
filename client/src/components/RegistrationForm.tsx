@@ -6,7 +6,8 @@ import { useToast } from "@/hooks/use-toast";
 import { useUserRegistration } from "@/hooks/use-user-registration";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { apiRequest } from "@/lib/queryClient";
-import { Shield, Users } from "lucide-react";
+import efemerosLogo from "@assets/bg remover_1757655880929.png";
+import rosettaLogo from "@assets/asdqwe_1757655899796.png";
 import type { InsertFactionRegistration } from "@shared/schema";
 
 interface RegistrationFormProps {
@@ -98,28 +99,28 @@ export default function RegistrationForm({ onClose, onSuccess }: RegistrationFor
               type="button"
               variant="outline"
               onClick={() => setFaction("efemeros")}
-              className={`h-20 flex flex-col items-center justify-center border-2 transition-all ${
+              className={`h-24 flex flex-col items-center justify-center border-2 transition-all ${
                 faction === "efemeros"
                   ? "border-cyan-500 bg-cyan-500/20 text-cyan-300"
                   : "border-slate-600 text-gray-300 hover:border-cyan-400 hover:bg-cyan-500/10"
               }`}
               data-testid="button-faction-efemeros"
             >
-              <Shield className="w-6 h-6 mb-1" />
+              <img src={efemerosLogo} alt="Efémeros" className="w-10 h-10 mb-1 object-contain" />
               <span className="text-sm font-medium">Efémeros</span>
             </Button>
             <Button
               type="button"
               variant="outline"
               onClick={() => setFaction("rosetta")}
-              className={`h-20 flex flex-col items-center justify-center border-2 transition-all ${
+              className={`h-24 flex flex-col items-center justify-center border-2 transition-all ${
                 faction === "rosetta"
                   ? "border-blue-500 bg-blue-500/20 text-blue-300"
                   : "border-slate-600 text-gray-300 hover:border-blue-400 hover:bg-blue-500/10"
               }`}
               data-testid="button-faction-rosetta"
             >
-              <Users className="w-6 h-6 mb-1" />
+              <img src={rosettaLogo} alt="Rosetta" className="w-10 h-10 mb-1 object-contain" />
               <span className="text-sm font-medium">Rosetta</span>
             </Button>
           </div>
