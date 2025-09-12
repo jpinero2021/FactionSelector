@@ -87,7 +87,7 @@ export default function ConfirmDeleteRegistrationModal({
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
       <DialogContent 
-        className="sm:max-w-md border-slate-600"
+        className="sm:max-w-lg border-slate-600 z-[60]"
         style={{ backgroundColor: "#2a2a2a" }}
       >
         <DialogHeader>

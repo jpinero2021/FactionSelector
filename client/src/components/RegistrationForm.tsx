@@ -90,7 +90,7 @@ export default function RegistrationForm({ onClose, onSuccess }: RegistrationFor
 
   return (
     <div 
-      className="p-6 rounded-lg border border-slate-600 max-w-md mx-auto"
+      className="p-6 rounded-lg border border-slate-600 w-full mx-auto"
       style={{
         backgroundColor: "#2a2a2a"
       }}

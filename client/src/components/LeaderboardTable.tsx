@@ -77,7 +77,13 @@ export default function LeaderboardTable({ entries, category }: LeaderboardTable
         </div>
 
         {/* Entries */}
-        <div>
+        <div 
+          className={`${
+            entries.length > 10 
+              ? "max-h-[600px] overflow-y-auto scrollbar-thin scrollbar-track-gray-800 scrollbar-thumb-gray-600 hover:scrollbar-thumb-gray-500" 
+              : ""
+          }`}
+        >
           {entries.map((entry, index) => (
             <div
               key={entry.id}

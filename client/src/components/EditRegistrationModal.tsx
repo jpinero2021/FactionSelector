@@ -106,7 +106,7 @@ export default function EditRegistrationModal({
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="bg-gray-900 border-gray-700 text-white max-w-md" data-testid="modal-edit-registration">
+      <DialogContent className="bg-gray-900 border-gray-700 text-white sm:max-w-lg z-[60]" data-testid="modal-edit-registration">
         <DialogHeader>
           <DialogTitle className="text-xl font-bold text-white">
             Editar Registro

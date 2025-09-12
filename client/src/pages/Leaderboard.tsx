@@ -56,14 +56,16 @@ export default function Leaderboard() {
           <Dialog open={isRegistrationOpen} onOpenChange={setIsRegistrationOpen}>
             <DialogTrigger asChild>
               <Button
-                className="bg-slate-700 hover:bg-slate-800 text-white font-semibold px-6 py-2"
+                className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-bold px-8 py-3 rounded-full shadow-lg transform transition-all hover:scale-105 hover:shadow-xl border border-blue-500/30"
                 data-testid="button-open-registration"
               >
-                Registrarse
+                <span className="flex items-center gap-2">
+                  ⚔️ Unirse a la batalla
+                </span>
               </Button>
             </DialogTrigger>
             <DialogContent 
-              className="sm:max-w-md border-slate-600"
+              className="sm:max-w-2xl border-slate-600 z-50"
               style={{ backgroundColor: "#1a1a1a" }}
             >
               <RegistrationForm 
