@@ -56,9 +56,6 @@ export default function Leaderboard() {
               fontFamily: "'Bebas Neue', sans-serif",
               fontWeight: "900",
               letterSpacing: "3px",
-              WebkitTextStroke: activeCategory === "efemeros" 
-                ? "2px #3b82f6" 
-                : "2px #ef4444",
               filter: activeCategory === "efemeros" 
                 ? "drop-shadow(0 0 15px rgba(59, 130, 246, 0.6)) drop-shadow(0 0 30px rgba(59, 130, 246, 0.3))" 
                 : "drop-shadow(0 0 15px rgba(239, 68, 68, 0.6)) drop-shadow(0 0 30px rgba(239, 68, 68, 0.3))",
