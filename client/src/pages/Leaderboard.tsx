@@ -53,7 +53,7 @@ export default function Leaderboard() {
           <h1 
             className="text-4xl md:text-5xl font-bold mb-2 text-white transition-all duration-500"
             style={{
-              fontFamily: "'Montserrat', sans-serif",
+              fontFamily: "'Archivo Black', sans-serif",
               fontWeight: "900",
               letterSpacing: "3px",
               WebkitTextStroke: activeCategory === "efemeros" 
