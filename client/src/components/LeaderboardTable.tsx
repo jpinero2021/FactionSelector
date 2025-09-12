@@ -15,23 +15,36 @@ interface LeaderboardTableProps {
 
 export default function LeaderboardTable({ entries, category }: LeaderboardTableProps) {
   return (
-    <div className="bg-card border border-card-border rounded-lg overflow-hidden">
+    <div 
+      className="overflow-hidden"
+      style={{
+        backgroundColor: "#2d3748",
+        border: "1px solid #4a5568"
+      }}
+    >
       {/* Header */}
-      <div className="grid grid-cols-4 gap-4 px-6 py-4 bg-muted/30 border-b border-border/50">
-        <div className="text-muted-foreground text-sm font-medium">Clasificación</div>
-        <div className="text-muted-foreground text-sm font-medium">Jugador</div>
-        <div className="text-muted-foreground text-sm font-medium">Colmena</div>
-        <div className="text-muted-foreground text-sm font-medium text-right">Energía de prisma</div>
+      <div 
+        className="grid grid-cols-4 gap-4 px-6 py-4 border-b"
+        style={{
+          backgroundColor: "#1a202c",
+          borderColor: "#4a5568"
+        }}
+      >
+        <div className="text-slate-400 text-sm font-medium">Clasificación</div>
+        <div className="text-slate-400 text-sm font-medium">Jugador</div>
+        <div className="text-slate-400 text-sm font-medium">Colmena</div>
+        <div className="text-slate-400 text-sm font-medium text-right">Energía de prisma</div>
       </div>
 
       {/* Entries */}
-      <div className="divide-y divide-border/30">
+      <div>
         {entries.map((entry, index) => (
           <div
             key={entry.id}
-            className={`grid grid-cols-4 gap-4 px-6 py-4 hover-elevate transition-colors ${
-              index % 2 === 0 ? "bg-background" : "bg-muted/10"
-            }`}
+            className="grid grid-cols-4 gap-4 px-6 py-4 hover-elevate transition-colors border-b border-slate-600/30"
+            style={{
+              backgroundColor: index % 2 === 0 ? "#2d3748" : "#374151"
+            }}
             data-testid={`row-player-${entry.rank}`}
           >
             {/* Rank */}
@@ -41,17 +54,17 @@ export default function LeaderboardTable({ entries, category }: LeaderboardTable
 
             {/* Player Name */}
             <div className="flex items-center">
-              <span className="text-foreground font-medium">{entry.playerName}</span>
+              <span className="text-white font-medium">{entry.playerName}</span>
             </div>
 
             {/* Team Name */}
             <div className="flex items-center">
-              <span className="text-muted-foreground">{entry.teamName}</span>
+              <span className="text-slate-300">{entry.teamName}</span>
             </div>
 
             {/* Energy Points */}
             <div className="flex items-center justify-end">
-              <span className="text-foreground font-semibold">{entry.energyPoints}</span>
+              <span className="text-white font-semibold">{entry.energyPoints}</span>
             </div>
           </div>
         ))}

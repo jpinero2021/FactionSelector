@@ -56,32 +56,39 @@ export default function Leaderboard() {
       energyPoints: 10,
       rank: 7,
     },
+    {
+      id: "8",
+      playerName: "HumanoOnce",
+      teamName: "Seres Humanos",
+      energyPoints: 400,
+      rank: 1,
+    },
   ];
 
   const rosettaData: LeaderboardEntry[] = [
     {
-      id: "8",
+      id: "9",
       playerName: "HumanoOnce",
       teamName: "Seres Humanos", 
       energyPoints: 400,
       rank: 1,
     },
     {
-      id: "9",
+      id: "10",
       playerName: "RosettaPlayer2",
       teamName: "Blue Team",
       energyPoints: 350,
       rank: 2,
     },
     {
-      id: "10",
+      id: "11",
       playerName: "CrystalMaster",
       teamName: "Diamond Guild",
       energyPoints: 300,
       rank: 3,
     },
     {
-      id: "11",
+      id: "12",
       playerName: "BlueStorm",
       teamName: "Storm Legion",
       energyPoints: 250,
@@ -92,13 +99,18 @@ export default function Leaderboard() {
   const currentData = activeCategory === "efemeros" ? efemeriosData : rosettaData;
 
   return (
-    <div className="min-h-screen bg-background">
+    <div 
+      className="min-h-screen"
+      style={{
+        backgroundColor: "#1a202c"
+      }}
+    >
       <LeaderboardToggle 
         activeCategory={activeCategory}
         onCategoryChange={setActiveCategory}
       />
       
-      <div className="container mx-auto px-8 py-8">
+      <div className="px-0">
         <LeaderboardTable 
           entries={currentData}
           category={activeCategory}
