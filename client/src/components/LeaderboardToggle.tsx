@@ -24,10 +24,6 @@ export default function LeaderboardToggle({ activeCategory, onCategoryChange }: 
         data-testid="button-toggle-efemeros"
       >
         <h1 className="text-white text-3xl font-bold tracking-wide">Efémeros</h1>
-        <div className="flex items-center gap-2 text-sm mt-1">
-          <span className="text-white/90">Energía de prisma de facción</span>
-          <span className="text-cyan-300 font-bold">💎 5590</span>
-        </div>
       </div>
 
       {/* Center Icons */}
