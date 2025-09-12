@@ -84,6 +84,20 @@ export default function Leaderboard() {
           entries={currentData}
           category={activeCategory}
         />
+        
+        {/* Faction Stats */}
+        <div 
+          className="mt-6 px-8 py-4 text-center border-t border-gray-600"
+          style={{
+            backgroundColor: "#2a2a2a"
+          }}
+        >
+          <div className="text-gray-300 text-sm">
+            <span className="text-cyan-400 font-medium">Efémeros: {efemeriosRegistrations.length}</span>
+            <span className="mx-4 text-gray-500">vs</span>
+            <span className="text-blue-400 font-medium">Rosetta: {rosettaRegistrations.length}</span>
+          </div>
+        </div>
       </div>
     </div>
   );
