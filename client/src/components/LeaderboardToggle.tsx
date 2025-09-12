@@ -18,40 +18,19 @@ export default function LeaderboardToggle({ activeCategory, onCategoryChange }: 
       }}
     >
       {/* Wave Effect */}
-      <div className="absolute inset-0 pointer-events-none">
-        <svg 
-          className="absolute bottom-0 left-0 w-full h-full"
-          viewBox="0 0 1200 100" 
-          preserveAspectRatio="none"
-          style={{
-            opacity: 0.1,
-            animation: "waveFlow 8s ease-in-out infinite"
-          }}
-        >
-          <path 
-            d="M0,50 Q300,10 600,50 T1200,50 L1200,100 L0,100 Z" 
-            fill="white"
-            style={{
-              animation: "waveShape 6s ease-in-out infinite alternate"
-            }}
-          />
-        </svg>
-        <svg 
-          className="absolute bottom-0 left-0 w-full h-full"
-          viewBox="0 0 1200 100" 
-          preserveAspectRatio="none"
-          style={{
-            opacity: 0.08,
-            animation: "waveFlow 10s ease-in-out infinite reverse"
-          }}
-        >
-          <path 
-            d="M0,30 Q400,70 800,30 T1600,30 L1600,100 L0,100 Z" 
-            fill="white"
-            style={{
-              animation: "waveShape2 8s ease-in-out infinite alternate"
-            }}
-          />
+      <div className="absolute inset-x-0 bottom-0 pointer-events-none">
+        <svg className="w-full h-16 overflow-visible" viewBox="0 0 1200 64" preserveAspectRatio="none">
+          <defs>
+            <path id="wave-path" d="M0 32 C 80 0, 160 64, 240 32 S 400 0, 480 32 S 640 64, 720 32 S 880 0, 960 32 S 1120 64, 1200 32" />
+          </defs>
+          <g className="wave-track">
+            <use href="#wave-path" x="0" fill="none" stroke="white" strokeWidth="2" vectorEffect="non-scaling-stroke" opacity="0.35" />
+            <use href="#wave-path" x="1200" fill="none" stroke="white" strokeWidth="2" vectorEffect="non-scaling-stroke" opacity="0.35" />
+          </g>
+          <g className="wave-track wave-track--slow">
+            <use href="#wave-path" x="0" fill="none" stroke="white" strokeWidth="1" vectorEffect="non-scaling-stroke" opacity="0.2" />
+            <use href="#wave-path" x="1200" fill="none" stroke="white" strokeWidth="1" vectorEffect="non-scaling-stroke" opacity="0.2" />
+          </g>
         </svg>
       </div>
       {/* 3-Region Grid Layout */}
