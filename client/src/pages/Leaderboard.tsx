@@ -194,6 +194,11 @@ export default function Leaderboard() {
             )}
           </div>
         </div>
+        
+        {/* Footer Note */}
+        <p className="text-center text-gray-500/60 text-sm mt-6 opacity-50">
+          Selector de facciones desarrollado por HumanoOnce para el Prismaverso 88
+        </p>
       </div>
     </div>
   );
