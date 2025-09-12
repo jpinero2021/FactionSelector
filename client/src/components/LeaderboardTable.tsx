@@ -115,31 +115,31 @@ export default function LeaderboardTable({ entries, category }: LeaderboardTable
                       size="sm"
                       variant="outline"
                       onClick={() => handleEditRegistration(entry)}
-                      className="border-blue-500/50 text-blue-400 hover:bg-blue-900/20 hover:border-blue-400 text-xs"
+                      className="border-blue-500/50 text-blue-400 hover:bg-blue-900/20 hover:border-blue-400 h-8 w-8 p-0"
                       data-testid={`button-edit-${entry.rank}`}
+                      title="Editar"
                     >
-                      <Edit className="w-3 h-3 mr-1" />
-                      Editar
+                      <Edit className="w-4 h-4" />
                     </Button>
                     <Button
                       size="sm"
                       variant="outline"
                       onClick={() => handleChangeFaction(entry)}
-                      className="border-slate-600 text-gray-300 hover:bg-slate-700 text-xs"
+                      className="border-slate-600 text-gray-300 hover:bg-slate-700 h-8 w-8 p-0"
                       data-testid={`button-change-faction-${entry.rank}`}
+                      title="Cambiar facción"
                     >
-                      <ArrowRightLeft className="w-3 h-3 mr-1" />
-                      Cambiar
+                      <ArrowRightLeft className="w-4 h-4" />
                     </Button>
                     <Button
                       size="sm"
                       variant="outline"
                       onClick={() => handleDeleteRegistration(entry)}
-                      className="border-red-500/50 text-red-400 hover:bg-red-900/20 hover:border-red-400 text-xs"
+                      className="border-red-500/50 text-red-400 hover:bg-red-900/20 hover:border-red-400 h-8 w-8 p-0"
                       data-testid={`button-delete-${entry.rank}`}
+                      title="Eliminar"
                     >
-                      <Trash2 className="w-3 h-3 mr-1" />
-                      Eliminar
+                      <Trash2 className="w-4 h-4" />
                     </Button>
                   </>
                 )}
