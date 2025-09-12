@@ -89,12 +89,8 @@ export default function RegistrationForm({ onClose, onSuccess }: RegistrationFor
   };
 
   return (
-    <div 
-      className="p-4 sm:p-6 rounded-lg border border-slate-600 w-full mx-auto"
-      style={{
-        backgroundColor: "rgba(42, 42, 42, 0.85)"
-      }}
-    >
+    <div className="p-4 sm:p-6 w-full mx-auto">
+
       <h2 className="text-xl font-bold text-white mb-6 text-center">Registro de Facción</h2>
       
       <form onSubmit={handleSubmit} className="space-y-4">
