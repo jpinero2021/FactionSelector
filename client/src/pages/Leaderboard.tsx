@@ -20,8 +20,7 @@ export default function Leaderboard() {
   const convertToLeaderboardEntry = (registration: FactionRegistration, rank: number): LeaderboardEntry => ({
     id: registration.id || "",
     playerName: registration.playerName,
-    teamName: registration.characterUuid || "Sin equipo", // Use UUID as team name or default
-    energyPoints: 0, // Default energy points for new registrations
+    characterUuid: registration.characterUuid || "-", // Show "-" if no UUID
     rank: rank,
   });
 
