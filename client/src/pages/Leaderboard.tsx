@@ -5,6 +5,7 @@ import LeaderboardTable, { LeaderboardEntry } from "@/components/LeaderboardTabl
 import RegistrationForm from "@/components/RegistrationForm";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
+import { Plus } from "lucide-react";
 import { FactionRegistration } from "@shared/schema";
 import efemerosLogo from "@assets/bg remover_1757655880929.png";
 import rosettaLogo from "@assets/asdqwe_1757655899796.png";
@@ -73,20 +74,18 @@ export default function Leaderboard() {
           <Dialog open={isRegistrationOpen} onOpenChange={setIsRegistrationOpen}>
             <DialogTrigger asChild>
               <Button
-                className="relative px-4 py-2 text-white font-semibold text-sm shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
+                className="relative w-14 h-14 rounded-full text-white shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 flex items-center justify-center"
                 style={{
                   background: "#374151",
                   boxShadow: activeCategory === "efemeros"
                     ? "0 4px 15px rgba(59, 130, 246, 0.4)"
                     : "0 4px 15px rgba(239, 68, 68, 0.4)",
                   border: "0",
-                  outline: "none",
-                  textShadow: "0 1px 2px rgba(0, 0, 0, 0.8)"
+                  outline: "none"
                 }}
                 data-testid="button-open-registration"
               >
-                <span className="relative z-10">Registrarse</span>
-                <div className="absolute inset-0 bg-gradient-to-b from-white/10 to-transparent"></div>
+                <Plus className="w-6 h-6" />
               </Button>
             </DialogTrigger>
             <DialogContent 
