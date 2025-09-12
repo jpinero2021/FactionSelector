@@ -66,25 +66,6 @@ export default function Leaderboard() {
       className="min-h-screen flex items-center justify-center py-8"
     >
       <div className="w-full max-w-4xl mx-auto shadow-2xl">
-        {/* Title */}
-        <div className="text-center mb-8">
-          <h1 
-            className="text-4xl md:text-5xl font-bold mb-2 text-white transition-all duration-500"
-            style={{
-              fontFamily: "'Bebas Neue', sans-serif",
-              fontWeight: "900",
-              letterSpacing: "3px",
-              filter: activeCategory === "efemeros" 
-                ? "drop-shadow(0 0 15px rgba(59, 130, 246, 0.6)) drop-shadow(0 0 30px rgba(59, 130, 246, 0.3))" 
-                : "drop-shadow(0 0 15px rgba(239, 68, 68, 0.6)) drop-shadow(0 0 30px rgba(239, 68, 68, 0.3))",
-              textShadow: activeCategory === "efemeros"
-                ? "0 0 8px rgba(59, 130, 246, 0.4), 0 0 16px rgba(59, 130, 246, 0.3)"
-                : "0 0 8px rgba(239, 68, 68, 0.4), 0 0 16px rgba(239, 68, 68, 0.3)"
-            }}
-          >
-            PRISMAVERSO 88
-          </h1>
-        </div>
         
         {/* Registration Button - Moved to top */}
         <div className="flex justify-center mb-6">
