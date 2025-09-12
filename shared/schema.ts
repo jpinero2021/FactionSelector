@@ -31,7 +31,18 @@ export const insertLeaderboardEntrySchema = createInsertSchema(leaderboardEntrie
   rank: true,
 });
 
+// Registro de facción schema
+export const factionRegistrationSchema = z.object({
+  id: z.string().optional(),
+  faction: z.enum(["efemeros", "rosetta"]),
+  playerName: z.string().min(1, "El nombre es requerido"),
+  characterUuid: z.string().optional(),
+  registeredAt: z.string().optional(),
+});
+
 export type InsertUser = z.infer<typeof insertUserSchema>;
 export type User = typeof users.$inferSelect;
 export type InsertLeaderboardEntry = z.infer<typeof insertLeaderboardEntrySchema>;
 export type LeaderboardEntry = typeof leaderboardEntries.$inferSelect;
+export type FactionRegistration = z.infer<typeof factionRegistrationSchema>;
+export type InsertFactionRegistration = Omit<FactionRegistration, 'id' | 'registeredAt'>;

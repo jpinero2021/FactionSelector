@@ -1,9 +1,13 @@
 import { useState } from "react";
 import LeaderboardToggle from "@/components/LeaderboardToggle";
 import LeaderboardTable, { LeaderboardEntry } from "@/components/LeaderboardTable";
+import RegistrationForm from "@/components/RegistrationForm";
+import { Button } from "@/components/ui/button";
+import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 
 export default function Leaderboard() {
   const [activeCategory, setActiveCategory] = useState<"efemeros" | "rosetta">("efemeros");
+  const [isRegistrationOpen, setIsRegistrationOpen] = useState(false);
 
   // todo: remove mock functionality - sample data from the image
   const efemeriosData: LeaderboardEntry[] = [
@@ -105,7 +109,27 @@ export default function Leaderboard() {
         backgroundColor: "#1a1a1a"
       }}
     >
-      <div className="w-full max-w-4xl mx-auto shadow-2xl">
+      <div className="w-full max-w-4xl mx-auto shadow-2xl relative">
+        {/* Registration Button */}
+        <div className="absolute top-4 right-4 z-10">
+          <Dialog open={isRegistrationOpen} onOpenChange={setIsRegistrationOpen}>
+            <DialogTrigger asChild>
+              <Button
+                className="bg-green-600 hover:bg-green-700 text-white font-semibold px-4 py-2"
+                data-testid="button-open-registration"
+              >
+                Registrarse
+              </Button>
+            </DialogTrigger>
+            <DialogContent 
+              className="sm:max-w-md border-slate-600"
+              style={{ backgroundColor: "#1a1a1a" }}
+            >
+              <RegistrationForm onClose={() => setIsRegistrationOpen(false)} />
+            </DialogContent>
+          </Dialog>
+        </div>
+
         <LeaderboardToggle 
           activeCategory={activeCategory}
           onCategoryChange={setActiveCategory}
