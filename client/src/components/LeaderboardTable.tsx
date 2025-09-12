@@ -80,7 +80,7 @@ export default function LeaderboardTable({ entries, category }: LeaderboardTable
         <div 
           className={`${
             entries.length > 5 
-              ? "max-h-[400px] overflow-y-auto scrollbar-thin scrollbar-track-gray-800 scrollbar-thumb-gray-600 hover:scrollbar-thumb-gray-500" 
+              ? "max-h-[400px] overflow-y-auto scrollbar-gaming" 
               : ""
           }`}
         >

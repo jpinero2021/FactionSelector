@@ -355,3 +355,45 @@
   animation-duration: 30s;
   animation-direction: reverse;
 }
+
+/* Custom Gaming Scrollbar Styles */
+.scrollbar-gaming {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(156, 163, 175, 0.3) rgba(26, 26, 26, 0.1);
+}
+
+/* Webkit browsers (Chrome, Safari, Edge) */
+.scrollbar-gaming::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.scrollbar-gaming::-webkit-scrollbar-track {
+  background: rgba(26, 26, 26, 0.2);
+  border-radius: 4px;
+  border: 1px solid rgba(75, 85, 99, 0.2);
+}
+
+.scrollbar-gaming::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, rgba(156, 163, 175, 0.4) 0%, rgba(107, 114, 128, 0.6) 50%, rgba(75, 85, 99, 0.8) 100%);
+  border-radius: 4px;
+  border: 1px solid rgba(75, 85, 99, 0.3);
+  transition: all 0.3s ease;
+}
+
+.scrollbar-gaming::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, rgba(156, 163, 175, 0.6) 0%, rgba(107, 114, 128, 0.8) 50%, rgba(59, 130, 246, 0.6) 100%);
+  border-color: rgba(59, 130, 246, 0.5);
+  box-shadow: 0 0 8px rgba(59, 130, 246, 0.3);
+}
+
+.scrollbar-gaming::-webkit-scrollbar-thumb:active {
+  background: linear-gradient(180deg, rgba(59, 130, 246, 0.7) 0%, rgba(37, 99, 235, 0.8) 50%, rgba(29, 78, 216, 0.9) 100%);
+  border-color: rgba(59, 130, 246, 0.7);
+  box-shadow: 0 0 12px rgba(59, 130, 246, 0.5);
+}
+
+/* Corner where horizontal and vertical scrollbars meet */
+.scrollbar-gaming::-webkit-scrollbar-corner {
+  background: rgba(26, 26, 26, 0.3);
+}
