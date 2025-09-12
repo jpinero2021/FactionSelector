@@ -1,5 +1,5 @@
-import mayflyLogo from "@assets/bg remover_1757650181268.png";
-import rossettaLogo from "@assets/asdqwe_1757650181266.png";
+import mayflyLogo from "@assets/bg remover_1757655880929.png";
+import rossettaLogo from "@assets/asdqwe_1757655899796.png";
 
 interface LeaderboardToggleProps {
   activeCategory: "efemeros" | "rosetta";
