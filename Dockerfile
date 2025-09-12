@@ -1,4 +1,4 @@
-# Dockerfile.dev
+# Dockerfile.dev as
 
 FROM node:20
 
