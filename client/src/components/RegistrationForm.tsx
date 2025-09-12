@@ -17,6 +17,7 @@ export default function RegistrationForm({ onClose, onSuccess }: RegistrationFor
   const [faction, setFaction] = useState<"efemeros" | "rosetta" | "">("");
   const [playerName, setPlayerName] = useState("");
   const [characterUuid, setCharacterUuid] = useState("");
+  const [teamName, setTeamName] = useState("");
   const { toast } = useToast();
   const queryClient = useQueryClient();
 
@@ -34,6 +35,7 @@ export default function RegistrationForm({ onClose, onSuccess }: RegistrationFor
       setFaction("");
       setPlayerName("");
       setCharacterUuid("");
+      setTeamName("");
       if (onSuccess) {
         onSuccess();
       } else if (onClose) {
@@ -65,6 +67,7 @@ export default function RegistrationForm({ onClose, onSuccess }: RegistrationFor
       faction: faction as "efemeros" | "rosetta",
       playerName,
       characterUuid: characterUuid || undefined,
+      teamName: teamName || undefined,
     });
   };
 
@@ -119,6 +122,22 @@ export default function RegistrationForm({ onClose, onSuccess }: RegistrationFor
             className="bg-slate-700 border-slate-600 text-white placeholder-gray-400"
             data-testid="input-player-name"
             required
+          />
+        </div>
+
+        {/* Colmena */}
+        <div className="space-y-2">
+          <Label htmlFor="teamName" className="text-gray-300">
+            Colmena (opcional)
+          </Label>
+          <Input
+            id="teamName"
+            type="text"
+            value={teamName}
+            onChange={(e) => setTeamName(e.target.value)}
+            placeholder="Ingresa el nombre de tu colmena"
+            className="bg-slate-700 border-slate-600 text-white placeholder-gray-400"
+            data-testid="input-team-name"
           />
         </div>
 

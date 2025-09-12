@@ -37,6 +37,7 @@ export const factionRegistrationSchema = z.object({
   faction: z.enum(["efemeros", "rosetta"]),
   playerName: z.string().min(1, "El nombre es requerido"),
   characterUuid: z.string().optional(),
+  teamName: z.string().optional(),
   registeredAt: z.string().optional(),
 });
 

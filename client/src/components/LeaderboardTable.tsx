@@ -4,6 +4,7 @@ export interface LeaderboardEntry {
   id: string;
   playerName: string;
   characterUuid: string;
+  teamName: string;
   rank: number;
 }
 
@@ -17,13 +18,14 @@ export default function LeaderboardTable({ entries, category }: LeaderboardTable
     <div className="w-full">
       {/* Header */}
       <div 
-        className="grid grid-cols-3 gap-6 px-8 py-4"
+        className="grid grid-cols-4 gap-6 px-8 py-4"
         style={{
           backgroundColor: "#1a1a1a"
         }}
       >
         <div className="text-gray-400 text-sm font-medium">Clasificación</div>
         <div className="text-gray-400 text-sm font-medium">Jugador</div>
+        <div className="text-gray-400 text-sm font-medium">Colmena</div>
         <div className="text-gray-400 text-sm font-medium">UUID</div>
       </div>
 
@@ -32,7 +34,7 @@ export default function LeaderboardTable({ entries, category }: LeaderboardTable
         {entries.map((entry, index) => (
           <div
             key={entry.id}
-            className="grid grid-cols-3 gap-6 px-8 py-4 hover:bg-gray-700/20 transition-colors"
+            className="grid grid-cols-4 gap-6 px-8 py-4 hover:bg-gray-700/20 transition-colors"
             style={{
               backgroundColor: "#2a2a2a"
             }}
@@ -46,6 +48,11 @@ export default function LeaderboardTable({ entries, category }: LeaderboardTable
             {/* Player Name */}
             <div className="flex items-center">
               <span className="text-white font-normal text-base">{entry.playerName}</span>
+            </div>
+
+            {/* Team Name */}
+            <div className="flex items-center">
+              <span className="text-gray-300 font-normal text-base">{entry.teamName}</span>
             </div>
 
             {/* Character UUID */}

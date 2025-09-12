@@ -21,6 +21,7 @@ export default function Leaderboard() {
     id: registration.id || "",
     playerName: registration.playerName,
     characterUuid: registration.characterUuid || "-", // Show "-" if no UUID
+    teamName: registration.teamName || "-", // Show "-" if no team name
     rank: rank,
   });
 
