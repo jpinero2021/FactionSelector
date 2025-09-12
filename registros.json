@@ -51,5 +51,14 @@
     "playerName": "Yesong",
     "registeredAt": "2025-09-12T06:22:49.376Z",
     "ownerSecret": "2bcff27b-7718-46af-84a6-8e338124b5de"
+  },
+  {
+    "id": "ded1ce18-2fb2-451b-ae6b-811e4aa5c1b2",
+    "faction": "efemeros",
+    "playerName": "asdasf",
+    "characterUuid": "ddsdff",
+    "teamName": "ddsadsdsf",
+    "registeredAt": "2025-09-12T06:53:53.249Z",
+    "ownerSecret": "be033f74-9828-4291-9e0a-099b7a82f5ba"
   }
 ]
