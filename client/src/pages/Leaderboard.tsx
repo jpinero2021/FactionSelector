@@ -74,18 +74,15 @@ export default function Leaderboard() {
           <Dialog open={isRegistrationOpen} onOpenChange={setIsRegistrationOpen}>
             <DialogTrigger asChild>
               <Button
-                className="relative w-14 h-14 rounded-full text-white shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 flex items-center justify-center"
+                className="relative w-10 h-10 rounded-full text-white hover:scale-105 transition-all duration-300 flex items-center justify-center"
                 style={{
                   background: "#374151",
-                  boxShadow: activeCategory === "efemeros"
-                    ? "0 4px 15px rgba(59, 130, 246, 0.4)"
-                    : "0 4px 15px rgba(239, 68, 68, 0.4)",
                   border: "0",
                   outline: "none"
                 }}
                 data-testid="button-open-registration"
               >
-                <Plus className="w-6 h-6" />
+                <Plus className="w-4 h-4" />
               </Button>
             </DialogTrigger>
             <DialogContent 
