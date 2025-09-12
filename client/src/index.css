@@ -335,3 +335,40 @@
     inset: -1px;
   }
 }
+
+/* Wave Animation Keyframes */
+@keyframes waveFlow {
+  0% {
+    transform: translateX(-50%);
+  }
+  50% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes waveShape {
+  0% {
+    d: path("M0,50 Q300,10 600,50 T1200,50 L1200,100 L0,100 Z");
+  }
+  50% {
+    d: path("M0,30 Q300,70 600,30 T1200,30 L1200,100 L0,100 Z");
+  }
+  100% {
+    d: path("M0,50 Q300,10 600,50 T1200,50 L1200,100 L0,100 Z");
+  }
+}
+
+@keyframes waveShape2 {
+  0% {
+    d: path("M0,30 Q400,70 800,30 T1600,30 L1600,100 L0,100 Z");
+  }
+  50% {
+    d: path("M0,60 Q400,20 800,60 T1600,60 L1600,100 L0,100 Z");
+  }
+  100% {
+    d: path("M0,30 Q400,70 800,30 T1600,30 L1600,100 L0,100 Z");
+  }
+}

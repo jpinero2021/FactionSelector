@@ -9,7 +9,7 @@ interface LeaderboardToggleProps {
 export default function LeaderboardToggle({ activeCategory, onCategoryChange }: LeaderboardToggleProps) {
   return (
     <div 
-      className="relative px-8 py-6 border-b-2 transition-all duration-700 ease-in-out"
+      className="relative px-8 py-6 border-b-2 transition-all duration-700 ease-in-out overflow-hidden"
       style={{
         background: activeCategory === "efemeros" 
           ? "linear-gradient(90deg, #1e40af 0%, #3b82f6 25%, #60a5fa 50%, #3b82f6 75%, #1e40af 100%)"
@@ -17,6 +17,43 @@ export default function LeaderboardToggle({ activeCategory, onCategoryChange }: 
         borderBottomColor: "#2d3748"
       }}
     >
+      {/* Wave Effect */}
+      <div className="absolute inset-0 pointer-events-none">
+        <svg 
+          className="absolute bottom-0 left-0 w-full h-full"
+          viewBox="0 0 1200 100" 
+          preserveAspectRatio="none"
+          style={{
+            opacity: 0.1,
+            animation: "waveFlow 8s ease-in-out infinite"
+          }}
+        >
+          <path 
+            d="M0,50 Q300,10 600,50 T1200,50 L1200,100 L0,100 Z" 
+            fill="white"
+            style={{
+              animation: "waveShape 6s ease-in-out infinite alternate"
+            }}
+          />
+        </svg>
+        <svg 
+          className="absolute bottom-0 left-0 w-full h-full"
+          viewBox="0 0 1200 100" 
+          preserveAspectRatio="none"
+          style={{
+            opacity: 0.08,
+            animation: "waveFlow 10s ease-in-out infinite reverse"
+          }}
+        >
+          <path 
+            d="M0,30 Q400,70 800,30 T1600,30 L1600,100 L0,100 Z" 
+            fill="white"
+            style={{
+              animation: "waveShape2 8s ease-in-out infinite alternate"
+            }}
+          />
+        </svg>
+      </div>
       {/* 3-Region Grid Layout */}
       <div className="mx-auto w-full max-w-4xl grid grid-cols-[1fr_auto_1fr] items-center gap-8">
         
