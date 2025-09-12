@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { Plus, Search, X } from "lucide-react";
+import { SiDiscord } from "react-icons/si";
 import { FactionRegistration } from "@shared/schema";
 import efemerosLogo from "@assets/bg remover_1757655880929.png";
 import rosettaLogo from "@assets/asdqwe_1757655899796.png";
@@ -196,10 +197,22 @@ export default function Leaderboard() {
         </div>
         
         {/* Footer Note */}
-        <p className="text-center text-gray-500/60 text-sm mt-6 opacity-50">
+        <p className="text-center text-gray-300 text-sm mt-6 opacity-75">
           Selector de facciones desarrollado por HumanoOnce para el Prismaverso 88
         </p>
       </div>
+      
+      {/* Fixed Discord Button */}
+      <a
+        href="https://discord.gg/xaNegXEBEu"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="fixed bottom-6 right-6 w-14 h-14 bg-[#5865F2] hover:bg-[#4752C4] text-white rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 z-50"
+        data-testid="button-discord"
+        title="Únete al Discord"
+      >
+        <SiDiscord className="w-7 h-7" />
+      </a>
     </div>
   );
 }
