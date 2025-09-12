@@ -51,18 +51,17 @@ export default function Leaderboard() {
         {/* Title */}
         <div className="text-center mb-8">
           <h1 
-            className={`text-4xl md:text-5xl font-bold mb-2 transition-all duration-500 ${
-              activeCategory === "efemeros" 
-                ? "bg-gradient-to-r from-cyan-300 via-blue-400 to-cyan-300 bg-clip-text text-transparent" 
-                : "bg-gradient-to-r from-red-300 via-red-400 to-red-300 bg-clip-text text-transparent"
-            }`}
+            className="text-4xl md:text-5xl font-bold mb-2 text-white transition-all duration-500"
             style={{
+              WebkitTextStroke: activeCategory === "efemeros" 
+                ? "2px #3b82f6" 
+                : "2px #ef4444",
               filter: activeCategory === "efemeros" 
-                ? "drop-shadow(0 0 20px rgba(59, 130, 246, 0.8)) drop-shadow(0 0 40px rgba(59, 130, 246, 0.4))" 
-                : "drop-shadow(0 0 20px rgba(239, 68, 68, 0.8)) drop-shadow(0 0 40px rgba(239, 68, 68, 0.4))",
+                ? "drop-shadow(0 0 15px rgba(59, 130, 246, 0.6)) drop-shadow(0 0 30px rgba(59, 130, 246, 0.3))" 
+                : "drop-shadow(0 0 15px rgba(239, 68, 68, 0.6)) drop-shadow(0 0 30px rgba(239, 68, 68, 0.3))",
               textShadow: activeCategory === "efemeros"
-                ? "0 0 10px rgba(59, 130, 246, 0.6), 0 0 20px rgba(59, 130, 246, 0.4), 0 0 30px rgba(59, 130, 246, 0.2)"
-                : "0 0 10px rgba(239, 68, 68, 0.6), 0 0 20px rgba(239, 68, 68, 0.4), 0 0 30px rgba(239, 68, 68, 0.2)"
+                ? "0 0 8px rgba(59, 130, 246, 0.4), 0 0 16px rgba(59, 130, 246, 0.3)"
+                : "0 0 8px rgba(239, 68, 68, 0.4), 0 0 16px rgba(239, 68, 68, 0.3)"
             }}
           >
             PRISMAVERSO 88
