@@ -3,6 +3,7 @@ import { createServer, type Server } from "http";
 import { storage } from "./storage";
 import { factionRegistrationSchema, updateRegistrationSchema } from "@shared/schema";
 import { z, ZodError } from "zod";
+import { validateAdminPassword, generateAdminToken, validateAdminToken, initializeAdminAuth } from "./auth";
 
 export async function registerRoutes(app: Express): Promise<Server> {
   // put application routes here
@@ -158,6 +159,52 @@ export async function registerRoutes(app: Express): Promise<Server> {
       res.status(500).json({ error: "Error deleting registration" });
     }
   });
+
+  // Admin Authentication Routes
+  app.post("/api/admin/login", async (req, res) => {
+    try {
+      const { password } = req.body;
+      
+      if (!password) {
+        return res.status(400).json({ error: "Password is required" });
+      }
+      
+      const isValid = await validateAdminPassword(password);
+      
+      if (!isValid) {
+        return res.status(401).json({ error: "Invalid admin password" });
+      }
+      
+      const token = generateAdminToken();
+      res.json({ success: true, token });
+    } catch (error) {
+      res.status(500).json({ error: "Error validating admin credentials" });
+    }
+  });
+
+  // Validate admin token
+  app.get("/api/admin/validate", async (req, res) => {
+    try {
+      const token = req.headers['authorization']?.replace('Bearer ', '');
+      
+      if (!token) {
+        return res.status(401).json({ error: "Token required" });
+      }
+      
+      const isValid = validateAdminToken(token);
+      
+      if (!isValid) {
+        return res.status(401).json({ error: "Invalid token" });
+      }
+      
+      res.json({ valid: true });
+    } catch (error) {
+      res.status(500).json({ error: "Error validating token" });
+    }
+  });
+
+  // Initialize admin auth on startup
+  await initializeAdminAuth();
 
   const httpServer = createServer(app);
 
