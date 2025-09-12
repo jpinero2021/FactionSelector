@@ -1,0 +1,35 @@
+import { Switch, Route } from "wouter";
+import { queryClient } from "./lib/queryClient";
+import { QueryClientProvider } from "@tanstack/react-query";
+import { Toaster } from "@/components/ui/toaster";
+import { TooltipProvider } from "@/components/ui/tooltip";
+import { useEffect } from "react";
+import Leaderboard from "@/pages/Leaderboard";
+import NotFound from "@/pages/not-found";
+
+function Router() {
+  return (
+    <Switch>
+      <Route path="/" component={Leaderboard} />
+      <Route component={NotFound} />
+    </Switch>
+  );
+}
+
+function App() {
+  // Set dark mode by default to match the gaming theme
+  useEffect(() => {
+    document.documentElement.classList.add("dark");
+  }, []);
+
+  return (
+    <QueryClientProvider client={queryClient}>
+      <TooltipProvider>
+        <Toaster />
+        <Router />
+      </TooltipProvider>
+    </QueryClientProvider>
+  );
+}
+
+export default App;
