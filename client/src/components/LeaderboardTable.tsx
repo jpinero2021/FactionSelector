@@ -22,6 +22,7 @@ interface LeaderboardTableProps {
 }
 
 export default function LeaderboardTable({ entries, category }: LeaderboardTableProps) {
+  // ALL HOOKS MUST BE CALLED FIRST - NO CONDITIONAL LOGIC BEFORE HOOKS
   const { currentRegistrationId } = useUserRegistration();
   const [factionChangeModal, setFactionChangeModal] = useState<{
     isOpen: boolean;
@@ -32,7 +33,7 @@ export default function LeaderboardTable({ entries, category }: LeaderboardTable
     entry: LeaderboardEntry | null;
   }>({ isOpen: false, entry: null });
 
-  // Check if user owns this registration
+  // Check if user owns this registration - MOVED AFTER ALL HOOKS
   const isUserRegistration = (entry: LeaderboardEntry) => {
     return currentRegistrationId === entry.registrationId;
   };
