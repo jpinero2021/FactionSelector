@@ -6,7 +6,7 @@ import RegistrationForm from "@/components/RegistrationForm";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
-import { Plus, Search, X } from "lucide-react";
+import { Plus, Search, X, RefreshCw } from "lucide-react";
 import { SiDiscord } from "react-icons/si";
 import { FactionRegistration } from "@shared/schema";
 import efemerosLogo from "@assets/bg remover_1757655880929.png";
@@ -17,9 +17,11 @@ export default function Leaderboard() {
   const [isRegistrationOpen, setIsRegistrationOpen] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
 
-  // Fetch all registrations from API
+  // Fetch all registrations from API with automatic refresh
   const { data: registrations = [], isLoading, refetch } = useQuery<FactionRegistration[]>({
     queryKey: ["/api/registrations"],
+    refetchInterval: 5000, // Actualizar automáticamente cada 5 segundos
+    refetchIntervalInBackground: false, // Solo cuando la pestaña está activa
   });
 
   // Convert faction registrations to leaderboard entries
@@ -68,8 +70,8 @@ export default function Leaderboard() {
     >
       <div className="w-full max-w-4xl mx-auto shadow-2xl">
         
-        {/* Registration Button - Moved to top */}
-        <div className="flex justify-center mb-6">
+        {/* Registration and Refresh Buttons */}
+        <div className="flex justify-center items-center gap-3 mb-6">
           <Dialog open={isRegistrationOpen} onOpenChange={setIsRegistrationOpen}>
             <DialogTrigger asChild>
               <Button
@@ -97,6 +99,22 @@ export default function Leaderboard() {
               />
             </DialogContent>
           </Dialog>
+
+          {/* Refresh Button */}
+          <Button
+            onClick={() => refetch()}
+            className="relative w-10 h-10 rounded-full text-white hover:scale-105 transition-all duration-300 flex items-center justify-center"
+            style={{
+              background: activeCategory === "efemeros" ? "#1e40af" : "#dc2626",
+              border: "0",
+              outline: "none"
+            }}
+            disabled={isLoading}
+            data-testid="button-refresh"
+            title="Actualizar datos"
+          >
+            <RefreshCw className={`w-4 h-4 ${isLoading ? 'animate-spin' : ''}`} />
+          </Button>
         </div>
 
         <LeaderboardToggle 

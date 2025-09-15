@@ -52,8 +52,10 @@ export const queryClient = new QueryClient({
     queries: {
       queryFn: getQueryFn({ on401: "throw" }),
       refetchInterval: false,
-      refetchOnWindowFocus: false,
-      staleTime: Infinity,
+      refetchOnWindowFocus: true, // Refresca cuando el usuario vuelve a la ventana
+      staleTime: 0, // Los datos se consideran obsoletos inmediatamente para /api/registrations
+      gcTime: 1000 * 60 * 1, // Cache solo por 1 minuto
+      refetchOnMount: true, // Siempre refresca al montar el componente
       retry: false,
     },
     mutations: {
