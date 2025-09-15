@@ -55,7 +55,13 @@ export class MemStorage implements IStorage {
       const data = await fs.readFile(REGISTROS_FILE, 'utf-8');
       return JSON.parse(data);
     } catch (error) {
-      // If file doesn't exist, return empty array
+      if (error instanceof Error) {
+        console.error('⚠️  ERROR: Problem reading registros.json:', error.message);
+        if (error.message.includes('JSON') || error.message.includes('Unexpected')) {
+          console.error('🔧 SUGGESTION: Check for missing commas or invalid JSON format in registros.json');
+        }
+      }
+      // If file doesn't exist or has JSON errors, return empty array
       return [];
     }
   }
