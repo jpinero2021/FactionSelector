@@ -7,5 +7,731 @@
     "teamName": "Humanoverso",
     "registeredAt": "2025-09-12T15:32:23.649Z",
     "ownerSecret": "02a0fc2b-e3b2-4bf3-b692-1819f5df48b0"
+  },
+  {
+    "id": "7ff62308-a82a-4612-a20b-97dc95e167a4",
+    "faction": "efemeros",
+    "playerName": "Yesong",
+    "characterUuid": "150922501",
+    "teamName": "Humanoverso",
+    "registeredAt": "2025-09-12T18:53:38.823Z",
+    "ownerSecret": "1be058ff-1a0b-4180-94ac-aea1902ffb2b"
+  },
+  {
+    "id": "01c9de1b-1a1f-455e-a93a-0d9dd80ec3b1",
+    "faction": "efemeros",
+    "playerName": "Rawayana",
+    "characterUuid": "150815621",
+    "teamName": "Humanoverso",
+    "registeredAt": "2025-09-12T18:54:02.438Z",
+    "ownerSecret": "4ffebd60-6e3a-45a5-80d0-b70abe3dc257"
+  },
+  {
+    "id": "87f21c06-27bd-4c45-a7ea-95776767cd0f",
+    "faction": "rosetta",
+    "playerName": "mandyx",
+    "characterUuid": "151146363",
+    "registeredAt": "2025-09-12T19:05:06.574Z",
+    "ownerSecret": "74c1209b-2a05-4116-b87b-28e0c6db12d4"
+  },
+  {
+    "id": "148dc60f-136a-428c-b9cd-3fc57ab8dcbb",
+    "faction": "efemeros",
+    "playerName": "Traya",
+    "characterUuid": "150531562",
+    "teamName": "Humanoverso",
+    "registeredAt": "2025-09-12T19:07:18.081Z",
+    "ownerSecret": "167d4daf-b450-4ea3-93d7-ef307d43b1d9"
+  },
+  {
+    "id": "40ded240-371f-4734-b9fa-ef1130803f05",
+    "faction": "efemeros",
+    "playerName": "CoRl",
+    "characterUuid": "151935723",
+    "teamName": "Humanoverso",
+    "registeredAt": "2025-09-12T19:32:44.481Z",
+    "ownerSecret": "63ec5241-ea43-47a2-b9d2-8fd03b0535fc"
+  },
+  {
+    "id": "0880ab7b-cc72-4658-a96e-1b23ea5c722b",
+    "faction": "efemeros",
+    "playerName": "DeviantFALLIDO",
+    "characterUuid": "150651546",
+    "registeredAt": "2025-09-12T19:46:13.832Z",
+    "ownerSecret": "e2ecff13-3b21-47a8-a73b-2356fe252250"
+  },
+  {
+    "id": "b924e93c-80dc-4489-a0be-328831627542",
+    "faction": "efemeros",
+    "playerName": "Matiu",
+    "teamName": "Wakanda por100pre",
+    "registeredAt": "2025-09-12T20:10:41.367Z",
+    "ownerSecret": "1141f3f8-7c6e-49f4-b377-c02d6154a2a1"
+  },
+  {
+    "id": "fea45285-2844-4f01-9990-23472470735a",
+    "faction": "efemeros",
+    "playerName": "G3mini",
+    "characterUuid": "150210179",
+    "registeredAt": "2025-09-12T23:26:01.567Z",
+    "ownerSecret": "75768e3f-2aa1-4065-8af2-9330d2c5472c"
+  },
+  {
+    "id": "326617ac-2912-4383-ae69-98f619151aa2",
+    "faction": "rosetta",
+    "playerName": "Lucar1n",
+    "characterUuid": "152452496",
+    "teamName": "KillerBoludito",
+    "registeredAt": "2025-09-13T02:08:10.002Z",
+    "ownerSecret": "fa3efe14-1bb9-40a9-9b39-6d71d78f699e"
+  },
+  {
+    "id": "836ae799-e26d-47fb-95e4-7f886cd70769",
+    "faction": "rosetta",
+    "playerName": "SrNub",
+    "teamName": "KillerBoludito",
+    "registeredAt": "2025-09-13T02:09:04.980Z",
+    "ownerSecret": "aa89dada-d17b-40c7-8159-141d26d10f21"
+  },
+  {
+    "id": "90711699-d0a5-4a12-a77d-0557e796c307",
+    "faction": "rosetta",
+    "playerName": "BravoK",
+    "teamName": "KillerBoludito",
+    "registeredAt": "2025-09-13T02:09:35.037Z",
+    "ownerSecret": "a4f4cda7-0c5e-422b-b85e-9a9d9a9467f0"
+  },
+  {
+    "id": "1b850352-7b11-470a-a683-a13bb4bc8992",
+    "faction": "rosetta",
+    "playerName": "DrakarysBr",
+    "teamName": "KillerBoludito",
+    "registeredAt": "2025-09-13T02:09:58.281Z",
+    "ownerSecret": "da69af1e-c296-45e4-852d-24a77db4dd31"
+  },
+  {
+    "id": "cb6bee21-10be-4d9a-9c2d-404f398784da",
+    "faction": "rosetta",
+    "playerName": "Blairzinha",
+    "teamName": "KillerBoludito",
+    "registeredAt": "2025-09-13T02:10:23.523Z",
+    "ownerSecret": "2656074c-00c9-4f17-9be0-872cbce172bc"
+  }
+  {
+    "id": "e07bb4f3-2ab8-4bc4-aba4-5e467afec7cf",
+    "faction": "rosetta",
+    "playerName": "Lîlith",
+    "registeredAt": "2025-09-13T04:35:46.135Z",
+    "ownerSecret": "16ae4e2d-db18-4244-820d-66bccb7d3556"
+  },
+  {
+    "id": "33c36217-93df-42b0-a7c1-6294429bda8a",
+    "faction": "efemeros",
+    "playerName": "Lhyn",
+    "teamName": "Laslindas",
+    "registeredAt": "2025-09-13T05:19:49.561Z",
+    "ownerSecret": "17ba8e88-7dfd-418a-b05e-775d513038f2"
+  },
+  {
+    "id": "430494a5-c0a5-4423-a2d7-4dd884d65b77",
+    "faction": "rosetta",
+    "playerName": "Skyend",
+    "characterUuid": "152414420",
+    "registeredAt": "2025-09-13T12:34:11.807Z",
+    "ownerSecret": "e964561b-0846-4268-bd2c-8846498ce976"
+  },
+  {
+    "id": "2ba856db-a209-442b-b1e1-eee4a4af1fb1",
+    "faction": "rosetta",
+    "playerName": "Canoppy",
+    "characterUuid": "152453740",
+    "registeredAt": "2025-09-13T16:21:11.015Z",
+    "ownerSecret": "65db697a-cb98-4419-a5d8-8812af322511"
+  },
+  {
+    "id": "12d29810-42da-47b5-83b2-fd3427973517",
+    "faction": "rosetta",
+    "playerName": "Uchigaitachi",
+    "characterUuid": "152389658",
+    "registeredAt": "2025-09-13T16:22:48.196Z",
+    "ownerSecret": "217a669f-d312-46ba-89e7-f82b6c4962ba"
+  },
+  {
+    "id": "a8d93c52-d444-4704-82d2-1c4c6227783c",
+    "faction": "rosetta",
+    "playerName": "NcPc",
+    "characterUuid": "152294531",
+    "registeredAt": "2025-09-13T16:23:43.997Z",
+    "ownerSecret": "b761eba9-4801-4dce-903e-c30ab8eacc37"
+  },
+  {
+    "id": "0cdf108c-41a8-4f9a-b721-e6c7554b8c33",
+    "faction": "rosetta",
+    "playerName": "Dooonnn",
+    "characterUuid": "150934176",
+    "registeredAt": "2025-09-13T16:34:10.015Z",
+    "ownerSecret": "1945e551-4699-4fc5-9d16-2a00843b52bd"
+  },
+  {
+    "id": "144966b5-72b3-4c7f-8c23-70bfab0596b3",
+    "faction": "rosetta",
+    "playerName": "Hunter.D.S.S",
+    "characterUuid": "151935396",
+    "registeredAt": "2025-09-13T17:39:49.521Z",
+    "ownerSecret": "69479068-1b21-4c71-9455-acf2948b57a6"
+  },
+  {
+    "id": "92e9f46b-bad3-468b-85b0-b9201ee843a1",
+    "faction": "efemeros",
+    "playerName": "MitsuMayusa",
+    "characterUuid": "152384120",
+    "registeredAt": "2025-09-13T17:48:30.793Z",
+    "ownerSecret": "db4031aa-2640-4cb8-90db-e56f642c8d27"
+  },
+  {
+    "id": "faafa5fd-d0eb-44b2-8888-d7b5e38b77db",
+    "faction": "efemeros",
+    "playerName": "EOBRAZINO",
+    "characterUuid": "152459672",
+    "registeredAt": "2025-09-13T17:55:59.880Z",
+    "ownerSecret": "e017d1ca-192f-46c1-b0c8-1d1684457c9f"
+  },
+  {
+    "id": "5d1f9bf6-5771-411b-a941-69a3e5377c60",
+    "faction": "efemeros",
+    "playerName": "Klozzzz",
+    "characterUuid": "152484517",
+    "registeredAt": "2025-09-13T18:22:43.230Z",
+    "ownerSecret": "376a6a74-4d26-453b-9e61-373d756eb8f5"
+  },
+  {
+    "id": "5ee15f27-42f9-4517-a494-d2d9318d57fc",
+    "faction": "rosetta",
+    "playerName": "Elzinx",
+    "characterUuid": "150435253",
+    "registeredAt": "2025-09-13T18:43:34.696Z",
+    "ownerSecret": "21da191f-2d1f-485b-b8ab-9af2d98f96a7"
+  },
+  {
+    "id": "1bb1f723-4ffb-458d-aabb-cf892f104b40",
+    "faction": "rosetta",
+    "playerName": "6cmduro",
+    "characterUuid": "152484604",
+    "registeredAt": "2025-09-13T18:53:30.425Z",
+    "ownerSecret": "4a4c2d43-0294-48e3-bc10-7c6ab93bb41f"
+  },
+  {
+    "id": "47e546f6-6e97-44cf-944c-a8ff95280a6e",
+    "faction": "rosetta",
+    "playerName": "Catigador",
+    "characterUuid": "150938012",
+    "registeredAt": "2025-09-13T19:19:28.812Z",
+    "ownerSecret": "cf444b0b-603f-4ee9-982b-8cce7f9508dd"
+  },
+  {
+    "id": "86b44432-f35e-4009-a012-8a9ec24a15af",
+    "faction": "efemeros",
+    "playerName": "Zeroviuz",
+    "characterUuid": "152024810",
+    "registeredAt": "2025-09-13T20:38:06.474Z",
+    "ownerSecret": "e8aedb5a-efa7-4980-a389-6aea9dda28a0"
+  },
+  {
+    "id": "0c1302d6-c4d8-4c7d-9f1f-b3601ed1d6c1",
+    "faction": "efemeros",
+    "playerName": "KiddLucifer",
+    "registeredAt": "2025-09-13T20:38:26.944Z",
+    "ownerSecret": "a23bcd16-5ab9-41d7-a6a4-435bfedc1a0a"
+  },
+  {
+    "id": "8b985654-2f7c-4332-a0cf-eb7cd5347479",
+    "faction": "rosetta",
+    "playerName": "Carlos_pppooo",
+    "characterUuid": "152459461",
+    "registeredAt": "2025-09-13T20:38:48.003Z",
+    "ownerSecret": "2d672d3a-1aad-42a7-b3dd-1d9965e55bc0"
+  },
+  {
+    "id": "9e0fab42-0b1f-491b-98b7-d7efab07cc94",
+    "faction": "efemeros",
+    "playerName": "Redcalx",
+    "characterUuid": "150845827",
+    "registeredAt": "2025-09-13T20:39:05.341Z",
+    "ownerSecret": "e6f7e2ea-5db7-40f6-a7d7-d96fe9195ff3"
+  },
+  {
+    "id": "285ff655-5e14-4c9d-a71a-8b9f61f6283c",
+    "faction": "efemeros",
+    "playerName": "-LoKuZ-",
+    "characterUuid": "152459671",
+    "registeredAt": "2025-09-13T20:39:33.134Z",
+    "ownerSecret": "f2c32c0a-858d-4842-83f0-49e87fa72306"
+  },
+  {
+    "id": "73ba832f-1311-4ca5-bf66-ce666a9c96b0",
+    "faction": "rosetta",
+    "playerName": "MochillaoTTk",
+    "characterUuid": "152459426",
+    "registeredAt": "2025-09-13T22:05:48.113Z",
+    "ownerSecret": "1ebeb005-37b6-4d9e-9049-0c4c871b85a6"
+  },
+  {
+    "id": "f6e8304a-76a0-4ae6-9044-e6c2dd671339",
+    "faction": "rosetta",
+    "playerName": "Camilita",
+    "characterUuid": "150189894",
+    "registeredAt": "2025-09-13T22:08:32.977Z",
+    "ownerSecret": "8df42d98-d233-4036-a53b-3513b2b7a6d6"
+  },
+  {
+    "id": "eb1b1250-9140-436f-9ed2-bad81b715392",
+    "faction": "rosetta",
+    "playerName": "ZenithFvc",
+    "characterUuid": "152444859",
+    "registeredAt": "2025-09-13T22:09:27.755Z",
+    "ownerSecret": "10cb6d87-f753-435c-bf39-b3d70128ce91"
+  },
+  {
+    "id": "fd6e0cea-d8df-41b0-9af2-c5db6bad3687",
+    "faction": "rosetta",
+    "playerName": "Drewangel",
+    "characterUuid": "150009687",
+    "teamName": "Turulecas",
+    "registeredAt": "2025-09-13T22:13:47.588Z",
+    "ownerSecret": "d209a3dc-c4f5-422b-b604-7371d3a04f44"
+  },
+  {
+    "id": "6d1237d9-ba4a-4146-8e6f-42bca4183a93",
+    "faction": "rosetta",
+    "playerName": "tronatsu",
+    "characterUuid": "151273913",
+    "registeredAt": "2025-09-13T22:32:52.397Z",
+    "ownerSecret": "a2053f05-0aaf-4ed7-8ee8-76cf63b97738"
+  },
+  {
+    "id": "9d723c25-4cb1-45b4-9364-e8b2ee2f4609",
+    "faction": "rosetta",
+    "playerName": "Roronoa_Zenn",
+    "characterUuid": "152356858",
+    "registeredAt": "2025-09-13T22:34:44.312Z",
+    "ownerSecret": "61198ae5-f08c-4bf3-a645-8bc9a040e8f5"
+  },
+  {
+    "id": "5fecab89-df19-45c5-8d95-34a381bc3231",
+    "faction": "efemeros",
+    "playerName": "LAFRESA",
+    "characterUuid": "150308363",
+    "teamName": "Humanoverso",
+    "registeredAt": "2025-09-13T22:50:53.726Z",
+    "ownerSecret": "012677d5-30e8-445b-9cd6-3810a385c667"
+  },
+  {
+    "id": "7424f138-80c3-49c4-b0fc-68e8bbc141e0",
+    "faction": "rosetta",
+    "playerName": "SrRusso",
+    "characterUuid": "152171532",
+    "registeredAt": "2025-09-13T23:02:05.325Z",
+    "ownerSecret": "a5cfb7ee-34d7-414a-b7b3-90697c7569e3"
+  },
+  {
+    "id": "b3e938e8-7e1a-4f84-887b-fb09cf92437e",
+    "faction": "rosetta",
+    "playerName": "xMegaSxONEx",
+    "characterUuid": "150163411",
+    "registeredAt": "2025-09-13T23:54:09.631Z",
+    "ownerSecret": "67166c80-5798-4dd0-9fb6-ecb5ee661ebf"
+  },
+  {
+    "id": "9b9e259c-f07c-42c4-8c72-c094291bf002",
+    "faction": "rosetta",
+    "playerName": "keyadronfgff",
+    "characterUuid": "152485531",
+    "registeredAt": "2025-09-13T23:54:55.150Z",
+    "ownerSecret": "945aa6c5-ecee-4cd9-88f7-6679fd2c9c55"
+  },
+  {
+    "id": "b5ca6974-d0f4-4cec-b058-99e9cd44bb92",
+    "faction": "rosetta",
+    "playerName": "Luna",
+    "characterUuid": "152468819",
+    "teamName": "Turulecos",
+    "registeredAt": "2025-09-14T00:17:22.048Z",
+    "ownerSecret": "ad6c98b3-a37e-4850-a0e8-369c65ae9734"
+  },
+  {
+    "id": "61b4b97e-4ce0-449c-8c62-032e42b551d6",
+    "faction": "efemeros",
+    "playerName": "Wismut",
+    "characterUuid": "152485564",
+    "registeredAt": "2025-09-14T00:18:07.749Z",
+    "ownerSecret": "9a386886-d605-484e-9706-98db14aa36b8"
+  },
+  {
+    "id": "677c4400-5798-480f-b97b-4f963c0e0bef",
+    "faction": "rosetta",
+    "playerName": "yimbo",
+    "characterUuid": "150181903",
+    "registeredAt": "2025-09-14T00:19:32.041Z",
+    "ownerSecret": "b0e0eb47-3bfc-4221-9abf-29eb13c795ee"
+  },
+  {
+    "id": "2c702071-3c1b-4804-886d-7e1097678f67",
+    "faction": "efemeros",
+    "playerName": "Sadic0",
+    "characterUuid": "152223991",
+    "registeredAt": "2025-09-14T00:19:59.067Z",
+    "ownerSecret": "ef4dc81a-cbb6-41bf-a836-3cc35a35b4c6"
+  },
+  {
+    "id": "80e068ec-f925-4eb3-93ad-c6b87f52524b",
+    "faction": "rosetta",
+    "playerName": "NishiAkuen",
+    "characterUuid": "152485276",
+    "registeredAt": "2025-09-14T00:24:02.396Z",
+    "ownerSecret": "339e39ce-dada-4d0e-ae26-f10ba2de55f1"
+  },
+  {
+    "id": "6d25766d-5dd8-4ff5-a71e-54d8b2c3a0d0",
+    "faction": "rosetta",
+    "playerName": "NykaNyka",
+    "characterUuid": "152485530",
+    "registeredAt": "2025-09-14T00:24:49.393Z",
+    "ownerSecret": "35434730-3abe-4787-8455-9b169a89cc92"
+  },
+  {
+    "id": "c87e598a-d64e-4324-b331-3296499749eb",
+    "faction": "efemeros",
+    "playerName": "Goodsz",
+    "characterUuid": "151478544",
+    "registeredAt": "2025-09-14T00:26:23.989Z",
+    "ownerSecret": "3f03d41d-d3eb-4ba9-950d-5ab874f73af3"
+  },
+  {
+    "id": "9c7c8cb9-6442-4027-846c-fe299a0c87f2",
+    "faction": "rosetta",
+    "playerName": "Esperancito",
+    "teamName": "Turulecas",
+    "registeredAt": "2025-09-14T00:57:05.089Z",
+    "ownerSecret": "16df01df-dccd-4cc0-8bd8-058f26448ab0"
+  },
+  {
+    "id": "7297a47a-76de-4f10-b9ec-ad91087e310a",
+    "faction": "efemeros",
+    "playerName": "QueElite",
+    "characterUuid": "152480830",
+    "registeredAt": "2025-09-14T01:11:23.587Z",
+    "ownerSecret": "546cae67-1980-4b5e-a192-9417475e6024"
+  },
+  {
+    "id": "c008502f-f8b8-4234-8fd1-41c66809fdae",
+    "faction": "rosetta",
+    "playerName": "arielkill2",
+    "characterUuid": "152480830",
+    "registeredAt": "2025-09-14T01:16:28.771Z",
+    "ownerSecret": "957e6549-dea8-4aae-a338-e7dafd505f6b"
+  },
+  {
+    "id": "f9acade3-1fe3-4a67-993f-c6f3f708d87c",
+    "faction": "rosetta",
+    "playerName": "Zelderk",
+    "characterUuid": "150418839",
+    "registeredAt": "2025-09-14T01:26:41.318Z",
+    "ownerSecret": "acb9d840-4fef-4803-afa5-0633ecad88db"
+  },
+  {
+    "id": "df2f6a97-b2e0-424b-9508-ab6df06f644b",
+    "faction": "rosetta",
+    "playerName": "TRsNicolas",
+    "characterUuid": "152485804",
+    "registeredAt": "2025-09-14T01:39:35.775Z",
+    "ownerSecret": "d103c0e1-f7b4-4ae9-afe9-1ea67194638d"
+  },
+  {
+    "id": "76f8d3a7-b1ca-44bd-859e-2a69869d57c4",
+    "faction": "efemeros",
+    "playerName": "Mitzuky.",
+    "characterUuid": "152042437",
+    "registeredAt": "2025-09-14T02:51:01.455Z",
+    "ownerSecret": "1717df0b-075c-4269-90eb-32293892bf87"
+  },
+  {
+    "id": "e1820629-14e0-49c6-9947-ee4e62a25805",
+    "faction": "efemeros",
+    "playerName": "KirikoKamorii",
+    "characterUuid": "151808882",
+    "registeredAt": "2025-09-14T02:54:59.762Z",
+    "ownerSecret": "9478e381-f5b7-455e-9048-e69f0fb3ae50"
+  },
+  {
+    "id": "8d737d4a-7800-48f7-bede-5531242df963",
+    "faction": "efemeros",
+    "playerName": "LiliKitty",
+    "characterUuid": "152387220",
+    "registeredAt": "2025-09-14T02:55:28.796Z",
+    "ownerSecret": "f815652b-112a-4f88-b3ed-6b3cbcab68b3"
+  },
+  {
+    "id": "e0ef8ad8-e21a-40f1-b699-e6ac7771178b",
+    "faction": "efemeros",
+    "playerName": "Max.23k",
+    "characterUuid": "152486173",
+    "registeredAt": "2025-09-14T02:56:09.326Z",
+    "ownerSecret": "dda6e0c3-887f-45ac-9bdc-b76d0b35231d"
+  },
+  {
+    "id": "922838eb-d63d-42d1-b9d9-abd5adf86e76",
+    "faction": "efemeros",
+    "playerName": "Tyrone",
+    "characterUuid": "152442065",
+    "registeredAt": "2025-09-14T03:33:32.554Z",
+    "ownerSecret": "6b595ce9-62cc-425b-97dc-17921fc4242d"
+  },
+  {
+    "id": "f6d93cb8-41a4-4092-90fe-cd1af5365aec",
+    "faction": "rosetta",
+    "playerName": "Bellatix0",
+    "characterUuid": "152486290",
+    "registeredAt": "2025-09-14T03:43:22.261Z",
+    "ownerSecret": "6d6223e1-e583-4767-aeb1-48bdfbd2b00e"
+  },
+  {
+    "id": "084dcb49-3de2-432c-97da-463409adc3fe",
+    "faction": "efemeros",
+    "playerName": "Nopvp",
+    "characterUuid": "150930944",
+    "registeredAt": "2025-09-14T03:46:38.199Z",
+    "ownerSecret": "6316635f-a9c2-41d5-aece-0c24c6b7ce46"
+  },
+  {
+    "id": "c17fcd10-26fb-4f1d-a60d-136c270f42d2",
+    "faction": "efemeros",
+    "playerName": "aKIRA_1988",
+    "characterUuid": "152485781",
+    "registeredAt": "2025-09-14T03:52:54.677Z",
+    "ownerSecret": "d188cd78-fc79-4298-97d6-0b71eec8214b"
+  },
+  {
+    "id": "879c0ec7-5c9d-4e6f-bbeb-5fda581e46e5",
+    "faction": "efemeros",
+    "playerName": "TEKKLER",
+    "characterUuid": "151851051",
+    "registeredAt": "2025-09-15T02:47:30.322Z",
+    "ownerSecret": "2924bdcc-8257-4906-ac05-bf18904e3fec"
+  },
+  {
+    "id": "5eb49c82-6f69-4729-976a-ad535ab4216c",
+    "faction": "efemeros",
+    "playerName": "RAKNOT",
+    "characterUuid": "152458736",
+    "registeredAt": "2025-09-15T02:47:47.665Z",
+    "ownerSecret": "786943f2-7d2f-47aa-9e1f-816b75870b3f"
+  },
+  {
+    "id": "53221562-0996-4251-ba6f-dee676f7b2ff",
+    "faction": "efemeros",
+    "playerName": "MuriTakaka",
+    "characterUuid": "152484723",
+    "registeredAt": "2025-09-15T02:48:06.006Z",
+    "ownerSecret": "e5d40d0f-76b6-45ad-b609-0ba48471f300"
+  },
+  {
+    "id": "79f6a7cb-f97d-4a01-98e5-0c9cbb69c6b9",
+    "faction": "rosetta",
+    "playerName": "aDesejo",
+    "characterUuid": "152485374",
+    "registeredAt": "2025-09-15T02:48:21.655Z",
+    "ownerSecret": "3f76dca7-52ea-43ed-b756-8e2ffaf48ae6"
+  },
+  {
+    "id": "e89c92b1-c5ea-4f87-b0fe-f4e6381b120a",
+    "faction": "efemeros",
+    "playerName": "beso",
+    "characterUuid": "150205646",
+    "registeredAt": "2025-09-15T02:57:21.958Z",
+    "ownerSecret": "fe763128-b4c7-48ec-9876-8acd4964badc"
+  },
+  {
+    "id": "690789ef-c3d0-491d-ab08-2cdb12d698b8",
+    "faction": "efemeros",
+    "playerName": "KAIKA",
+    "teamName": "Raidzone",
+    "registeredAt": "2025-09-15T03:00:39.544Z",
+    "ownerSecret": "d4a99955-9d69-47b6-abb8-dd43b2c83066"
+  },
+  {
+    "id": "53b42ba7-7679-455f-bdc1-139db68dc055",
+    "faction": "rosetta",
+    "playerName": "Min.Ji",
+    "characterUuid": "151514000",
+    "registeredAt": "2025-09-15T03:36:56.193Z",
+    "ownerSecret": "559b81b6-ccd2-4f3b-b569-bea021ba95a1"
+  },
+  {
+    "id": "a3a78b85-c240-439d-8464-e26000960d81",
+    "faction": "efemeros",
+    "playerName": "ScarlettJh",
+    "characterUuid": "150809920",
+    "registeredAt": "2025-09-15T03:37:26.880Z",
+    "ownerSecret": "9e856c3a-993a-4b09-911e-b75516266d86"
+  },
+  {
+    "id": "c02f8903-dcff-4b96-b262-ff370b4e3262",
+    "faction": "rosetta",
+    "playerName": "Crixus'",
+    "characterUuid": "151216611",
+    "registeredAt": "2025-09-15T14:08:39.248Z",
+    "ownerSecret": "b59d6281-3861-421b-8afe-c5e8359c96c9"
+  },
+  {
+    "id": "d0d599f0-6c0c-43d9-8f30-65a5859c1f70",
+    "faction": "rosetta",
+    "playerName": "Antares.",
+    "characterUuid": "151495770",
+    "registeredAt": "2025-09-15T14:35:01.359Z",
+    "ownerSecret": "20bb848a-b770-437d-b039-24830754ba0e"
+  },
+  {
+    "id": "692d33ff-a21c-47ca-9472-4dc3074fc94c",
+    "faction": "efemeros",
+    "playerName": "ClydefortySEVEN",
+    "characterUuid": "152398189",
+    "registeredAt": "2025-09-15T15:35:11.103Z",
+    "ownerSecret": "ed7897b4-a39d-4b24-a72f-1ad7b7d039a6"
+  },
+  {
+    "id": "0de199b7-1347-4a44-a38a-2bf100664900",
+    "faction": "rosetta",
+    "playerName": "Valtra",
+    "characterUuid": "152484812",
+    "registeredAt": "2025-09-15T15:35:22.766Z",
+    "ownerSecret": "a45304c7-b66b-4927-ba93-4058aa6445cf"
+  },
+  {
+    "id": "bbe39fb3-7a1e-489f-b9de-60932b9409c4",
+    "faction": "rosetta",
+    "playerName": "zBlaairzhinha",
+    "characterUuid": "152176574",
+    "registeredAt": "2025-09-15T15:35:42.212Z",
+    "ownerSecret": "1efdc294-55ee-42e0-b748-264e05e2c671"
+  },
+  {
+    "id": "bc1d5e0c-67f0-4dac-8e95-9b6b620f76ed",
+    "faction": "efemeros",
+    "playerName": "Sriel.Killer",
+    "characterUuid": "152440994",
+    "registeredAt": "2025-09-15T19:43:34.580Z",
+    "ownerSecret": "74e62c47-a7bf-4259-88ba-f1468a30f906"
+  },
+  {
+    "id": "f6244375-1d10-44b0-ad98-80f25f62a859",
+    "faction": "rosetta",
+    "playerName": "AccessDeniend",
+    "characterUuid": "150767088",
+    "registeredAt": "2025-09-15T20:05:22.285Z",
+    "ownerSecret": "f5c740be-5aa6-4f8e-92d7-4e97fe44bf15"
+  },
+  {
+    "id": "b752083d-1199-4a3f-9178-48961da869c5",
+    "faction": "rosetta",
+    "playerName": "Seasmoke",
+    "characterUuid": "152421767",
+    "registeredAt": "2025-09-15T22:16:31.458Z",
+    "ownerSecret": "fb8a4d63-a653-41bf-80de-3bb84723f55e"
+  },
+  {
+    "id": "cd20935b-5723-4af4-96f3-b6e389c8086f",
+    "faction": "efemeros",
+    "playerName": "Tayrn",
+    "characterUuid": "150907834",
+    "registeredAt": "2025-09-15T22:17:17.002Z",
+    "ownerSecret": "28317b4c-0cda-4081-8c6a-35d824a758aa"
+  },
+  {
+    "id": "1e8ff1f0-8067-49aa-9056-048ef1bc4ed8",
+    "faction": "rosetta",
+    "playerName": "Oroshy13",
+    "characterUuid": "150899981",
+    "registeredAt": "2025-09-15T22:17:48.411Z",
+    "ownerSecret": "2d67e674-3dda-4d44-8231-729bb7c84e5d"
+  },
+  {
+    "id": "a8bc67a2-ee97-4dc3-addd-b17a52ceef39",
+    "faction": "rosetta",
+    "playerName": "Papita7",
+    "characterUuid": "150477308",
+    "registeredAt": "2025-09-15T22:39:21.952Z",
+    "ownerSecret": "db4e9b72-86d2-4dcc-9ce6-5efe264b71bc"
+  },
+  {
+    "id": "9016df57-1783-4152-9cbc-641629c00ac0",
+    "faction": "rosetta",
+    "playerName": "Riisadiinha",
+    "characterUuid": "151643556",
+    "registeredAt": "2025-09-15T22:39:46.795Z",
+    "ownerSecret": "9f54b9b7-680d-49f9-8824-215452ec3761"
+  },
+  {
+    "id": "91af2ee2-aa4e-4625-819e-8afd8fe9e752",
+    "faction": "rosetta",
+    "playerName": "Thechamps85",
+    "characterUuid": "152366067",
+    "registeredAt": "2025-09-15T22:40:07.474Z",
+    "ownerSecret": "0a3ff59c-2d09-4fdd-b0d7-0f63b414dd41"
+  },
+  {
+    "id": "08c55a2f-87b7-450e-80fd-ef79eace6fa4",
+    "faction": "rosetta",
+    "playerName": "TUZORRITA",
+    "characterUuid": "152488282",
+    "registeredAt": "2025-09-15T22:40:25.909Z",
+    "ownerSecret": "1562ec0f-4f2e-4bac-b027-35951eed99be"
+  },
+  {
+    "id": "4a36c6ac-56f1-4226-b6ec-c957af5f471c",
+    "faction": "efemeros",
+    "playerName": "ObryxDasSombras",
+    "characterUuid": "152491410",
+    "registeredAt": "2025-09-15T22:40:52.419Z",
+    "ownerSecret": "b01a229b-ae63-43f6-b071-9ba801e73b68"
+  },
+  {
+    "id": "ad04e08e-226b-4588-857c-e6df8cbc88b6",
+    "faction": "rosetta",
+    "playerName": "Guilhermemes",
+    "characterUuid": "152490410",
+    "registeredAt": "2025-09-15T22:41:09.893Z",
+    "ownerSecret": "638b81ca-603c-4ab4-a555-e9d88ca3b7bf"
+  },
+  {
+    "id": "edc2e1e5-d0aa-4faa-bf3c-36cefb225500",
+    "faction": "rosetta",
+    "playerName": "Flavinfps",
+    "characterUuid": "152490408",
+    "registeredAt": "2025-09-15T22:41:23.793Z",
+    "ownerSecret": "81905fcc-96af-4cc4-b806-22afc0acb497"
+  },
+  {
+    "id": "652c371a-4ee5-4292-95c3-ae49d7da86a9",
+    "faction": "rosetta",
+    "playerName": "EndiabradaFps",
+    "characterUuid": "152490407",
+    "registeredAt": "2025-09-15T22:41:41.126Z",
+    "ownerSecret": "053923e2-4c90-4ce4-b8e9-7d5cccfc1ba0"
+  },
+  {
+    "id": "8e086e18-8557-4b55-8ac8-aaf0c65960e7",
+    "faction": "efemeros",
+    "playerName": "Obzeeno",
+    "characterUuid": "152486429",
+    "registeredAt": "2025-09-15T22:42:01.516Z",
+    "ownerSecret": "0c5809d0-a84a-44c8-9331-6ac9f7d8a1bb"
+  },
+  {
+    "id": "7f7f0961-5607-4b53-9e98-15bc0627438c",
+    "faction": "efemeros",
+    "playerName": "DiabaVermelha",
+    "characterUuid": "152471316",
+    "registeredAt": "2025-09-15T22:42:36.649Z",
+    "ownerSecret": "ca5d3969-4ab6-4bb8-9f8d-78747bd4481b"
   }
 ]
